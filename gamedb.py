@@ -9,7 +9,7 @@
 # See https://www.youtube.com/watch?v=Sqr8lq79jsU&list=PL4sZJNxKabvlY-Fp3ozv7S290bbvvLNQD&index=1
 # for more information about the header structure
 #
-games: {
+games = {
     "01:TBC@2960 AZKJ": {
         'uttd': "AZKJ",
         'title': "Simple 2960 Tomodachi Series Vol. 1 - The Table Game Collection",
@@ -165,6 +165,9 @@ games: {
     "AGB-BSMP    BSMP": {
         'uttd': "BSMP",
         'title': "Metal Slug Advance",
+        'icon0': 'https://images.launchbox-app.com/83c4fe37-2773-495f-bb70-aa58839e3fae.jpg',
+        'pic0': 'https://images.launchbox-app.com/e9a2f52c-25b4-4184-8ef0-0e3785d4d1ce.png',
+        'pic1': 'https://images.launchbox-app.com/158d45de-507b-4124-9917-a4c90d6cca91.jpg',
     },
     "AGB-DOOM    ADME": {
         'uttd': "ADME",
@@ -5676,6 +5679,9 @@ games: {
     "METAL SLUG  BSME": {
         'uttd': "BSME",
         'title': "Metal Slug Advance",
+        'icon0': 'https://images.launchbox-app.com/5211fca7-d0dc-4c53-9dda-f2fd7a5309f6.jpg',
+        'pic0': 'https://images.launchbox-app.com/e9a2f52c-25b4-4184-8ef0-0e3785d4d1ce.png',
+        'pic1': 'https://images.launchbox-app.com/158d45de-507b-4124-9917-a4c90d6cca91.jpg',
     },
     "METFUSIONCHNAMTC": {
         'uttd': "AMTC",
