@@ -9,6 +9,24 @@
 # See https://www.youtube.com/watch?v=Sqr8lq79jsU&list=PL4sZJNxKabvlY-Fp3ozv7S290bbvvLNQD&index=1
 # for more information about the header structure
 #
+#
+# Commerical games follow the format UTTD, where:
+#
+# ==== =================================== =============================== ==== =====================
+# U (game type)                   TT (shorthand game title)     D (destination/language)
+# ---------------------------------------- ------------------------------- --------------------------
+# Code Meaning                             Meaning                         Code Destination/language
+# ==== =================================== =============================== ==== =====================
+# A    Normal game (usually 2001 to 2003)  An arbitrary abbreviation for   D    German
+# B    Normal game (year 2003 onwards)     the game title (eg. "PM" for    E    USA/English
+# C    Normal game (not yet used)          "Pac Man").                     F    French
+# F    Famicom/NES                                                         I    Italian
+# K    Acceleration sensor                                                 J    Japan
+# P    For e-Reader (dot-code scanner)                                     P    Europe/elsewhere
+# R    Rumble and Z-axis gyro sensor                                       S    Spanish
+# U    RTC and solar sensor
+# V    Rumble motor
+        
 games = {
     "01:TBC@2960 AZKJ": {
         'uttd': "AZKJ",
@@ -137,10 +155,18 @@ games = {
     "ADVANCEWARS AWRE": {
         'uttd': "AWRE",
         'title': "Advance Wars",
+        'icon0': 'https://images.launchbox-app.com/0d283a33-c5f3-429d-a1f1-3d6aa6a33553.jpg',
+        'pic0': 'https://images.launchbox-app.com/73022111-ee1f-42ce-a7fe-471e55b2e010.png',
+        'pic1': 'https://images.launchbox-app.com/4a4c39c1-9048-4570-ba6f-3079954f3a9c.jpg',
+        'snd0': 'https://www.youtube.com/watch?v=Uhw3n1p-Tlk&list=PLph1rKwgi-5gfdUX6DWt3PCyk982DFzuL&index=1',
     },
     "ADVANCEWARSPAWRP": {
         'uttd': "AWRP",
         'title': "Advance Wars",
+        'icon0': 'https://images.launchbox-app.com/0d283a33-c5f3-429d-a1f1-3d6aa6a33553.jpg',
+        'pic0': 'https://images.launchbox-app.com/73022111-ee1f-42ce-a7fe-471e55b2e010.png',
+        'pic1': 'https://images.launchbox-app.com/4a4c39c1-9048-4570-ba6f-3079954f3a9c.jpg',
+        'snd0': 'https://www.youtube.com/watch?v=Uhw3n1p-Tlk&list=PLph1rKwgi-5gfdUX6DWt3PCyk982DFzuL&index=1',
     },
     "AEROACROBATXAAOE": {
         'uttd': "AAOE",
@@ -448,14 +474,26 @@ games = {
     "ASTROBOY    BTAE": {
         'uttd': "BTAE",
         'title': "Astro Boy - Omega Factor",
+        'icon0': 'https://images.launchbox-app.com/8dc7dee2-3ac0-4905-a362-f269f3079846.jpg',
+        'pic0': 'https://images.launchbox-app.com/d9090e02-4373-40cc-a4d2-bf67e113b91a.png',
+        'pic1': 'https://images.launchbox-app.com/7516f500-4e6c-4d92-801d-7feb8dcab322.jpg',
+        'snd0': 'https://www.youtube.com/watch?v=W63cvvBFbOI&list=PL8C60229988A2CB28&index=1',
     },
     "ASTROBOY    BTAJ": {
         'uttd': "BTAJ",
         'title': "Astro Boy - Tetsuwan Atom - Atom Heart no Himitsu",
+        'icon0': 'https://images.launchbox-app.com/97fdf958-c48a-4e6f-af90-129d4debf5e0.png',
+        'pic0': 'https://images.launchbox-app.com/d9090e02-4373-40cc-a4d2-bf67e113b91a.png',
+        'pic1': 'https://images.launchbox-app.com/7516f500-4e6c-4d92-801d-7feb8dcab322.jpg',
+        'snd0': 'https://www.youtube.com/watch?v=W63cvvBFbOI&list=PL8C60229988A2CB28&index=1',
     },
     "ASTRO BOY-OMBTAP": {
         'uttd': "BTAP",
         'title': "Astro Boy - Omega Factor",
+        'icon0': 'https://images.launchbox-app.com/8dc7dee2-3ac0-4905-a362-f269f3079846.jpg',
+        'pic0': 'https://images.launchbox-app.com/d9090e02-4373-40cc-a4d2-bf67e113b91a.png',
+        'pic1': 'https://images.launchbox-app.com/7516f500-4e6c-4d92-801d-7feb8dcab322.jpg',
+        'snd0': 'https://www.youtube.com/watch?v=W63cvvBFbOI&list=PL8C60229988A2CB28&index=1',
     },
     "ATARI_ANNIVEAAVE": {
         'uttd': "AAVE",
@@ -1348,14 +1386,26 @@ games = {
     "CASTLEVANIA2A2CE": {
         'uttd': "A2CE",
         'title': "Castlevania - Aria of Sorrow",
+        'icon0': 'https://images.launchbox-app.com/23588e39-184c-4b82-8c7a-5c46d1868013.jpg',
+        'pic0': 'https://images.launchbox-app.com/9e11fc8f-6df7-4ceb-ac9d-f09c20ffca98.png',
+        'pic1': 'https://images.launchbox-app.com/434d0e00-59c9-405f-9c85-ae8fb2f1bb07.jpg',
+        'snd0': 'https://www.youtube.com/watch?v=IlVOomZcv0Q&list=PL6E9hVlff2TGFs9fVmsNIeuSpciQ9eKgi&index=1',
     },
     "CASTLEVANIA2A2CJ": {
         'uttd': "A2CJ",
         'title': "Castlevania - Akatsuki no Minuet",
+        'icon0': 'https://images.launchbox-app.com/297f69a9-40aa-49db-a31a-ad79154feabd.png',
+        'pic0': 'https://images.launchbox-app.com/9e11fc8f-6df7-4ceb-ac9d-f09c20ffca98.png',
+        'pic1': 'https://images.launchbox-app.com/434d0e00-59c9-405f-9c85-ae8fb2f1bb07.jpg',
+        'snd0': 'https://www.youtube.com/watch?v=IlVOomZcv0Q&list=PL6E9hVlff2TGFs9fVmsNIeuSpciQ9eKgi&index=1',
     },
     "CASTLEVANIA2A2CP": {
         'uttd': "A2CP",
         'title': "Castlevania - Aria of Sorrow",
+        'icon0': 'https://images.launchbox-app.com/42f3dffe-05db-4020-9914-3f8446178611.jpg',
+        'pic0': 'https://images.launchbox-app.com/a103d387-a59e-47ab-8afa-6adf73cb32c5.png',
+        'pic1': 'https://images.launchbox-app.com/434d0e00-59c9-405f-9c85-ae8fb2f1bb07.jpg',
+        'snd0': 'https://www.youtube.com/watch?v=IlVOomZcv0Q&list=PL6E9hVlff2TGFs9fVmsNIeuSpciQ9eKgi&index=1',
     },
     "CASTLEVANIA FADE": {
         'uttd': "FADE",
@@ -3143,14 +3193,26 @@ games = {
     "FIREEMBLEME AE7E": {
         'uttd': "AE7E",
         'title': "Fire Emblem",
+        'icon0': 'https://images.launchbox-app.com/a3cf209e-7ad6-4d6a-b314-7c1e59400c64.jpg',
+        'pic0': 'https://images.launchbox-app.com/88cd133b-578e-4517-8b73-1d1dc06746a0.png',
+        'pic1': 'https://images.launchbox-app.com/89982137-a0fc-4833-89bd-5f73201f155e.jpg',
+        'snd0': 'https://www.youtube.com/watch?v=NEStaXflg3o&list=PLA0005A166A014EF4&index=1',
     },
     "FIREEMBLEMX AE7X": {
         'uttd': "AE7X",
         'title': "Fire Emblem",
+        'icon0': 'https://images.launchbox-app.com/a3cf209e-7ad6-4d6a-b314-7c1e59400c64.jpg',
+        'pic0': 'https://images.launchbox-app.com/88cd133b-578e-4517-8b73-1d1dc06746a0.png',
+        'pic1': 'https://images.launchbox-app.com/89982137-a0fc-4833-89bd-5f73201f155e.jpg',
+        'snd0': 'https://www.youtube.com/watch?v=NEStaXflg3o&list=PLA0005A166A014EF4&index=1',
     },
     "FIREEMBLEMY AE7Y": {
         'uttd': "AE7Y",
         'title': "Fire Emblem",
+        'icon0': 'https://images.launchbox-app.com/a3cf209e-7ad6-4d6a-b314-7c1e59400c64.jpg',
+        'pic0': 'https://images.launchbox-app.com/88cd133b-578e-4517-8b73-1d1dc06746a0.png',
+        'pic1': 'https://images.launchbox-app.com/89982137-a0fc-4833-89bd-5f73201f155e.jpg',
+        'snd0': 'https://www.youtube.com/watch?v=NEStaXflg3o&list=PLA0005A166A014EF4&index=1',
     },
     "FLUSHED AWAYBLHE": {
         'uttd': "BLHE",
@@ -3415,14 +3477,26 @@ games = {
     "GBAZELDA MC BZME": {
         'uttd': "BZME",
         'title': "Legend of Zelda, The - The Minish Cap",
+        'icon0': 'https://images.launchbox-app.com/0fe2ca8b-4307-4913-a1b2-46720c1a82d1.jpg',
+        'pic0': 'https://images.launchbox-app.com/f5d37c8b-60cc-45c1-b459-27055dbe98e7.png',
+        'pic1': 'https://images.launchbox-app.com/4827e856-0ee9-46df-81fe-d83f72225588.jpg',
+        'snd0': 'https://www.youtube.com/watch?v=B7T9t5Swu0c&list=PL66C3A99730C3F3F2&index=1',
     },
     "GBAZELDA MC BZMJ": {
         'uttd': "BZMJ",
         'title': "Zelda no Densetsu - Fushigi no Boushi",
+        'icon0': 'https://images.launchbox-app.com/aa436fc7-6b34-4cb7-87e7-dec315f71573.jpg',
+        'pic0': 'https://images.launchbox-app.com/751983ec-eb5d-4456-ad1f-7a8f8000eb35.png',
+        'pic1': 'https://images.launchbox-app.com/4827e856-0ee9-46df-81fe-d83f72225588.jpg',
+        'snd0': 'https://www.youtube.com/watch?v=B7T9t5Swu0c&list=PL66C3A99730C3F3F2&index=1',
     },
     "GBAZELDA MC BZMP": {
         'uttd': "BZMP",
         'title': "Legend of Zelda, The - The Minish Cap",
+        'icon0': 'https://images.launchbox-app.com/0fe2ca8b-4307-4913-a1b2-46720c1a82d1.jpg',
+        'pic0': 'https://images.launchbox-app.com/f5d37c8b-60cc-45c1-b459-27055dbe98e7.png',
+        'pic1': 'https://images.launchbox-app.com/4827e856-0ee9-46df-81fe-d83f72225588.jpg',
+        'snd0': 'https://www.youtube.com/watch?v=B7T9t5Swu0c&list=PL66C3A99730C3F3F2&index=1',
     },
     "GB JYAGAN   BGFJ": {
         'uttd': "BGFJ",
@@ -5319,26 +5393,50 @@ games = {
     "MARIO KART  AMKE": {
         'uttd': "AMKE",
         'title': "Mario Kart - Super Circuit",
+        'icon0': 'https://images.launchbox-app.com/faaa1b52-35d1-4881-85af-1440b0d05721.jpg',
+        'pic0': 'https://images.launchbox-app.com/8ec6f272-8882-4fae-9958-7b008b99bb11.png',
+        'pic1': 'https://images.launchbox-app.com/750b024b-d5d6-4d73-9b11-14035f70846a.jpg',
+        'snd0': 'https://www.youtube.com/watch?v=k29shcWBc8E&list=PL27933B09777F55C7&index=1',
     },
     "MARIO KART  AMKJ": {
         'uttd': "AMKJ",
         'title': "Mario Kart Advance",
+        'icon0': 'https://images.launchbox-app.com/0cba0b9e-5604-47dd-925b-a8ebcd29ee25.jpg',
+        'pic0': 'https://images.launchbox-app.com/8ec6f272-8882-4fae-9958-7b008b99bb11.png',
+        'pic1': 'https://images.launchbox-app.com/750b024b-d5d6-4d73-9b11-14035f70846a.jpg',
+        'snd0': 'https://www.youtube.com/watch?v=k29shcWBc8E&list=PL27933B09777F55C7&index=1',
     },
     "MARIO KART  AMKP": {
         'uttd': "AMKP",
         'title': "Mario Kart - Super Circuit",
+        'icon0': 'https://images.launchbox-app.com/faaa1b52-35d1-4881-85af-1440b0d05721.jpg',
+        'pic0': 'https://images.launchbox-app.com/8ec6f272-8882-4fae-9958-7b008b99bb11.png',
+        'pic1': 'https://images.launchbox-app.com/750b024b-d5d6-4d73-9b11-14035f70846a.jpg',
+        'snd0': 'https://www.youtube.com/watch?v=k29shcWBc8E&list=PL27933B09777F55C7&index=1',
     },
     "MARIO&LUIGIJA88J": {
         'uttd': "A88J",
         'title': "Mario & Luigi RPG",
+        'icon0': 'https://images.launchbox-app.com/a11e4deb-c68a-4b46-b225-d2aa3a846bc5.jpg',
+        'pic0': 'https://images.launchbox-app.com/7976c4d6-30d5-4b18-b0b5-6209d844cecb.png',
+        'pic1': 'https://images.launchbox-app.com/573d6a31-78f6-479a-96c8-8706364e66b9.jpg',
+        'snd0': 'https://www.youtube.com/watch?v=8twTNeB6Hgo&list=PLXQMeRR5llU-_b1wHNCo5w2Lbszy9B6dO&index=1',
     },
     "MARIO&LUIGIPA88P": {
         'uttd': "A88P",
         'title': "Mario & Luigi - Superstar Saga",
+        'icon0': 'https://images.launchbox-app.com/70592a60-f531-4473-ad4c-1a2d032a786c.jpg',
+        'pic0': 'https://images.launchbox-app.com/7976c4d6-30d5-4b18-b0b5-6209d844cecb.png',
+        'pic1': 'https://images.launchbox-app.com/573d6a31-78f6-479a-96c8-8706364e66b9.jpg',
+        'snd0': 'https://www.youtube.com/watch?v=8twTNeB6Hgo&list=PLXQMeRR5llU-_b1wHNCo5w2Lbszy9B6dO&index=1',
     },
     "MARIO&LUIGIUA88E": {
         'uttd': "A88E",
         'title': "Mario & Luigi - Superstar Saga",
+        'icon0': 'https://images.launchbox-app.com/70592a60-f531-4473-ad4c-1a2d032a786c.jpg',
+        'pic0': 'https://images.launchbox-app.com/7976c4d6-30d5-4b18-b0b5-6209d844cecb.png',
+        'pic1': 'https://images.launchbox-app.com/573d6a31-78f6-479a-96c8-8706364e66b9.jpg',
+        'snd0': 'https://www.youtube.com/watch?v=8twTNeB6Hgo&list=PLXQMeRR5llU-_b1wHNCo5w2Lbszy9B6dO&index=1',
     },
     "MARIOPARTYEUB8MP": {
         'uttd': "B8MP",
@@ -5690,14 +5788,26 @@ games = {
     "METROID4EUR AMTP": {
         'uttd': "AMTP",
         'title': "Metroid Fusion",
+        'icon0': 'https://images.launchbox-app.com/0f4e70dc-3a84-4ac5-86a9-f47f5399c04e.jpg',
+        'pic0': 'https://images.launchbox-app.com/86d2ae66-c545-425d-9145-d72e3bba4d6f.png',
+        'pic1': 'https://images.launchbox-app.com/6e710e66-3704-409d-ba78-6e78b4b0bcb5.jpg',
+        'snd0': 'https://www.youtube.com/watch?v=L-TE2h_XB4w&list=PL71442F24C8795CD7&index=1',
     },
     "METROID4JPN AMTJ": {
         'uttd': "AMTJ",
         'title': "Metroid Fusion",
+        'icon0': 'https://images.launchbox-app.com/0f4e70dc-3a84-4ac5-86a9-f47f5399c04e.jpg',
+        'pic0': 'https://images.launchbox-app.com/86d2ae66-c545-425d-9145-d72e3bba4d6f.png',
+        'pic1': 'https://images.launchbox-app.com/6e710e66-3704-409d-ba78-6e78b4b0bcb5.jpg',
+        'snd0': 'https://www.youtube.com/watch?v=L-TE2h_XB4w&list=PL71442F24C8795CD7&index=1',
     },
     "METROID4USA AMTE": {
         'uttd': "AMTE",
         'title': "Metroid Fusion",
+        'icon0': 'https://images.launchbox-app.com/0f4e70dc-3a84-4ac5-86a9-f47f5399c04e.jpg',
+        'pic0': 'https://images.launchbox-app.com/86d2ae66-c545-425d-9145-d72e3bba4d6f.png',
+        'pic1': 'https://images.launchbox-app.com/6e710e66-3704-409d-ba78-6e78b4b0bcb5.jpg',
+        'snd0': 'https://www.youtube.com/watch?v=L-TE2h_XB4w&list=PL71442F24C8795CD7&index=1',
     },
     "MEZA_KOUSIENBMKJ": {
         'uttd': "BMKJ",
@@ -7070,26 +7180,50 @@ games = {
     "POKEMON EMERBPED": {
         'uttd': "BPED",
         'title': "Pokemon - Smaragd-Edition",
+        'icon0': 'https://images.launchbox-app.com/76544f7b-a881-4a4a-83ec-721b9bdef3c1.jpg',
+        'pic0': 'https://images.launchbox-app.com/d7ede79c-0ad1-4ffc-bc0f-20008d86d16f.png',
+        'pic1': 'https://images.launchbox-app.com/ea68934a-f38d-49be-b8d3-b4f10304a927.jpg',
+        'snd0': 'https://www.youtube.com/watch?v=yNJ66qzmDks&list=PL22604C8CC8FCB417&index=1',
     },
     "POKEMON EMERBPEE": {
         'uttd': "BPEE",
         'title': "Pokemon - Emerald Version",
+        'icon0': 'https://images.launchbox-app.com/76544f7b-a881-4a4a-83ec-721b9bdef3c1.jpg',
+        'pic0': 'https://images.launchbox-app.com/d7ede79c-0ad1-4ffc-bc0f-20008d86d16f.png',
+        'pic1': 'https://images.launchbox-app.com/ea68934a-f38d-49be-b8d3-b4f10304a927.jpg',
+        'snd0': 'https://www.youtube.com/watch?v=yNJ66qzmDks&list=PL22604C8CC8FCB417&index=1',
     },
     "POKEMON EMERBPEF": {
         'uttd': "BPEF",
         'title': "Pokemon - Version Emeraude",
+        'icon0': 'https://images.launchbox-app.com/76544f7b-a881-4a4a-83ec-721b9bdef3c1.jpg',
+        'pic0': 'https://images.launchbox-app.com/d7ede79c-0ad1-4ffc-bc0f-20008d86d16f.png',
+        'pic1': 'https://images.launchbox-app.com/ea68934a-f38d-49be-b8d3-b4f10304a927.jpg',
+        'snd0': 'https://www.youtube.com/watch?v=yNJ66qzmDks&list=PL22604C8CC8FCB417&index=1',
     },
     "POKEMON EMERBPEI": {
         'uttd': "BPEI",
         'title': "Pokemon - Versione Smeraldo",
+        'icon0': 'https://images.launchbox-app.com/76544f7b-a881-4a4a-83ec-721b9bdef3c1.jpg',
+        'pic0': 'https://images.launchbox-app.com/d7ede79c-0ad1-4ffc-bc0f-20008d86d16f.png',
+        'pic1': 'https://images.launchbox-app.com/ea68934a-f38d-49be-b8d3-b4f10304a927.jpg',
+        'snd0': 'https://www.youtube.com/watch?v=yNJ66qzmDks&list=PL22604C8CC8FCB417&index=1',
     },
     "POKEMON EMERBPEJ": {
         'uttd': "BPEJ",
         'title': "Pocket Monsters - Emerald",
+        'icon0': 'https://images.launchbox-app.com/12d8ee3e-3c80-4548-8d2e-ed3161fe3ed5.jpg',
+        'pic0': 'https://images.launchbox-app.com/d7ede79c-0ad1-4ffc-bc0f-20008d86d16f.png',
+        'pic1': 'https://images.launchbox-app.com/ea68934a-f38d-49be-b8d3-b4f10304a927.jpg',
+        'snd0': 'https://www.youtube.com/watch?v=yNJ66qzmDks&list=PL22604C8CC8FCB417&index=1',
     },
     "POKEMON EMERBPES": {
         'uttd': "BPES",
         'title': "Pokemon - Edicion Esmeralda",
+        'icon0': 'https://images.launchbox-app.com/76544f7b-a881-4a4a-83ec-721b9bdef3c1.jpg',
+        'pic0': 'https://images.launchbox-app.com/d7ede79c-0ad1-4ffc-bc0f-20008d86d16f.png',
+        'pic1': 'https://images.launchbox-app.com/ea68934a-f38d-49be-b8d3-b4f10304a927.jpg',
+        'snd0': 'https://www.youtube.com/watch?v=yNJ66qzmDks&list=PL22604C8CC8FCB417&index=1',
     },
     "POKEMON FIREBPRD": {
         'uttd': "BPRD",
@@ -7142,26 +7276,50 @@ games = {
     "POKEMON RUBYAXVD": {
         'uttd': "AXVD",
         'title': "Pokemon - Rubin-Edition",
+        'icon0': 'https://images.launchbox-app.com/c10d1bcb-3446-448b-8cf5-4b1df49eb394.png',
+        'pic0': 'https://images.launchbox-app.com/06551353-2456-4601-a9ad-23e927abe628.png',
+        'pic1': 'https://images.launchbox-app.com/1d82df1e-481a-4163-ba5f-41356d4895b5.jpg',
+        'snd0': 'https://www.youtube.com/watch?v=C9rEeGWK0pQ&list=PLEiOTsktKIotvaMzRhqvCsT7PHbm67nsq&index=1',
     },
     "POKEMON RUBYAXVE": {
         'uttd': "AXVE",
         'title': "Pokemon - Ruby Version",
+        'icon0': 'https://images.launchbox-app.com/c10d1bcb-3446-448b-8cf5-4b1df49eb394.png',
+        'pic0': 'https://images.launchbox-app.com/06551353-2456-4601-a9ad-23e927abe628.png',
+        'pic1': 'https://images.launchbox-app.com/1d82df1e-481a-4163-ba5f-41356d4895b5.jpg',
+        'snd0': 'https://www.youtube.com/watch?v=C9rEeGWK0pQ&list=PLEiOTsktKIotvaMzRhqvCsT7PHbm67nsq&index=1',
     },
     "POKEMON RUBYAXVF": {
         'uttd': "AXVF",
         'title': "Pokemon - Version Rubis",
+        'icon0': 'https://images.launchbox-app.com/c10d1bcb-3446-448b-8cf5-4b1df49eb394.png',
+        'pic0': 'https://images.launchbox-app.com/06551353-2456-4601-a9ad-23e927abe628.png',
+        'pic1': 'https://images.launchbox-app.com/1d82df1e-481a-4163-ba5f-41356d4895b5.jpg',
+        'snd0': 'https://www.youtube.com/watch?v=C9rEeGWK0pQ&list=PLEiOTsktKIotvaMzRhqvCsT7PHbm67nsq&index=1',
     },
     "POKEMON RUBYAXVI": {
         'uttd': "AXVI",
         'title': "Pokemon - Versione Rubino",
+        'icon0': 'https://images.launchbox-app.com/c10d1bcb-3446-448b-8cf5-4b1df49eb394.png',
+        'pic0': 'https://images.launchbox-app.com/06551353-2456-4601-a9ad-23e927abe628.png',
+        'pic1': 'https://images.launchbox-app.com/1d82df1e-481a-4163-ba5f-41356d4895b5.jpg',
+        'snd0': 'https://www.youtube.com/watch?v=C9rEeGWK0pQ&list=PLEiOTsktKIotvaMzRhqvCsT7PHbm67nsq&index=1',
     },
     "POKEMON RUBYAXVJ": {
         'uttd': "AXVJ",
         'title': "Pocket Monsters - Ruby",
+        'icon0': 'https://images.launchbox-app.com/adeb5ca1-a43e-41a1-8f5f-3be54b56c012.jpg',
+        'pic0': 'https://images.launchbox-app.com/06551353-2456-4601-a9ad-23e927abe628.png',
+        'pic1': 'https://images.launchbox-app.com/1d82df1e-481a-4163-ba5f-41356d4895b5.jpg',
+        'snd0': 'https://www.youtube.com/watch?v=C9rEeGWK0pQ&list=PLEiOTsktKIotvaMzRhqvCsT7PHbm67nsq&index=1',
     },
     "POKEMON RUBYAXVS": {
         'uttd': "AXVS",
         'title': "Pokemon - Edicion Rubi",
+        'icon0': 'https://images.launchbox-app.com/c10d1bcb-3446-448b-8cf5-4b1df49eb394.png',
+        'pic0': 'https://images.launchbox-app.com/06551353-2456-4601-a9ad-23e927abe628.png',
+        'pic1': 'https://images.launchbox-app.com/1d82df1e-481a-4163-ba5f-41356d4895b5.jpg',
+        'snd0': 'https://www.youtube.com/watch?v=C9rEeGWK0pQ&list=PLEiOTsktKIotvaMzRhqvCsT7PHbm67nsq&index=1',
     },
     "POKEMON SAPPAXPD": {
         'uttd': "AXPD",
@@ -7190,14 +7348,26 @@ games = {
     "POKEPIN R/S BPPE": {
         'uttd': "BPPE",
         'title': "Pokemon Pinball - Ruby & Sapphire",
+        'icon0': 'https://images.launchbox-app.com/ac9df2f2-7820-4769-bd5f-0338a5193da5.jpg',
+        'pic0': 'https://images.launchbox-app.com/8d6075de-0871-43e9-9c8c-2ec26f12db32.png',
+        'pic1': 'https://images.launchbox-app.com/19c9e387-4e85-40f1-b0b2-7869cba3f3eb.jpg',
+        'snd0': 'https://www.youtube.com/watch?v=S3pOGfFVits&list=PLUXEBUs17WcRIF9kz-yAq-T2TenT0ei8U&index=1',
     },
     "POKEPIN R/S BPPJ": {
         'uttd': "BPPJ",
         'title': "Pokemon Pinball - Ruby & Sapphire",
+        'icon0': 'https://images.launchbox-app.com/8f306af2-99e4-413b-9f68-ac3e489e34e0.jpg',
+        'pic0': 'https://images.launchbox-app.com/8d6075de-0871-43e9-9c8c-2ec26f12db32.png',
+        'pic1': 'https://images.launchbox-app.com/19c9e387-4e85-40f1-b0b2-7869cba3f3eb.jpg',
+        'snd0': 'https://www.youtube.com/watch?v=S3pOGfFVits&list=PLUXEBUs17WcRIF9kz-yAq-T2TenT0ei8U&index=1',
     },
     "POKEPIN R/S BPPP": {
         'uttd': "BPPP",
         'title': "Pokemon Pinball - Ruby & Sapphire",
+        'icon0': 'https://images.launchbox-app.com/ac9df2f2-7820-4769-bd5f-0338a5193da5.jpg',
+        'pic0': 'https://images.launchbox-app.com/8d6075de-0871-43e9-9c8c-2ec26f12db32.png',
+        'pic1': 'https://images.launchbox-app.com/19c9e387-4e85-40f1-b0b2-7869cba3f3eb.jpg',
+        'snd0': 'https://www.youtube.com/watch?v=S3pOGfFVits&list=PLUXEBUs17WcRIF9kz-yAq-T2TenT0ei8U&index=1',
     },
     "POLAREXPRESSBPXE": {
         'uttd': "BPXE",
@@ -10234,14 +10404,26 @@ games = {
     "WARIOWAREINCAZWC": {
         'uttd': "AZWC",
         'title': "Waliou Zhizao",
+        'icon0': 'https://images.launchbox-app.com/3a73f46b-8f2d-48eb-a0e7-dce3021e4075.png',
+        'pic0': 'https://images.launchbox-app.com/aaa2b723-93e1-413e-9889-e87f751c9242.png',
+        'pic1': 'https://images.launchbox-app.com/85dc2462-9b5b-481f-894c-2ddc4266f2ac.jpg',
+        'snd0': 'https://www.youtube.com/watch?v=G4EQLdH4UVc&list=PLjyLjyXJQJUPePFzsfvc-AtVPLUJ1qsrv&index=1',
     },
     "WARIOWAREINCAZWE": {
         'uttd': "AZWE",
         'title': "WarioWare, Inc. - Mega Microgame$!",
+        'icon0': 'https://images.launchbox-app.com/9fb1b982-cb23-44d3-8066-1ebe3eeee661.jpg',
+        'pic0': 'https://images.launchbox-app.com/34d3c1ca-b813-4273-b746-ab0a223a533f.png',
+        'pic1': 'https://images.launchbox-app.com/85dc2462-9b5b-481f-894c-2ddc4266f2ac.jpg',
+        'snd0': 'https://www.youtube.com/watch?v=G4EQLdH4UVc&list=PLjyLjyXJQJUPePFzsfvc-AtVPLUJ1qsrv&index=1',
     },
     "WARIOWAREINCAZWP": {
         'uttd': "AZWP",
         'title': "WarioWare, Inc. - Minigame Mania",
+        'icon0': 'https://images.launchbox-app.com/36209cf7-49d9-4f10-82d8-e33c72137269.jpg',
+        'pic0': 'https://images.launchbox-app.com/d3ce4feb-8648-47a8-959f-fab8dc16ff4a.png',
+        'pic1': 'https://images.launchbox-app.com/85dc2462-9b5b-481f-894c-2ddc4266f2ac.jpg',
+        'snd0': 'https://www.youtube.com/watch?v=G4EQLdH4UVc&list=PLjyLjyXJQJUPePFzsfvc-AtVPLUJ1qsrv&index=1',
     },
     "W.A.SOCCER_WAASJ": {
         'uttd': "AASJ",
@@ -10730,14 +10912,26 @@ games = {
     "ZEROMISSIONEBMXE": {
         'uttd': "BMXE",
         'title': "Metroid - Zero Mission",
+        'icon0': 'https://images.launchbox-app.com/a2331b18-0475-4f67-bb6a-9f928fe62474.jpg',
+        'pic0': 'https://images.launchbox-app.com/9fd48d9e-d7f4-41e9-9019-1a78d014020a.png',
+        'pic1': 'https://images.launchbox-app.com/d64b324c-7512-4a6a-b84c-3c577f5015fb.jpg',
+        'snd0': 'https://www.youtube.com/watch?v=9sC4wlz4zrY&list=PLA4B22C847C11C106&index=1',
     },
     "ZEROMISSIONJBMXJ": {
         'uttd': "BMXJ",
         'title': "Metroid - Zero Mission",
+        'icon0': 'https://images.launchbox-app.com/a2331b18-0475-4f67-bb6a-9f928fe62474.jpg',
+        'pic0': 'https://images.launchbox-app.com/9fd48d9e-d7f4-41e9-9019-1a78d014020a.png',
+        'pic1': 'https://images.launchbox-app.com/d64b324c-7512-4a6a-b84c-3c577f5015fb.jpg',
+        'snd0': 'https://www.youtube.com/watch?v=9sC4wlz4zrY&list=PLA4B22C847C11C106&index=1',
     },
     "ZEROMISSIONPBMXP": {
         'uttd': "BMXP",
         'title': "Metroid - Zero Mission",
+        'icon0': 'https://images.launchbox-app.com/a2331b18-0475-4f67-bb6a-9f928fe62474.jpg',
+        'pic0': 'https://images.launchbox-app.com/9fd48d9e-d7f4-41e9-9019-1a78d014020a.png',
+        'pic1': 'https://images.launchbox-app.com/d64b324c-7512-4a6a-b84c-3c577f5015fb.jpg',
+        'snd0': 'https://www.youtube.com/watch?v=9sC4wlz4zrY&list=PLA4B22C847C11C106&index=1',
     },
     "ZERO ONE    AF3J": {
         'uttd': "AF3J",
