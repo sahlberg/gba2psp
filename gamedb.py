@@ -214,6 +214,9 @@ games = {
     "AGB KIRBY DXA7KE": {
         'uttd': "A7KE",
         'title': "Kirby - Nightmare in Dream Land",
+        'icon0': "https://images.launchbox-app.com/f9ca1877-68a8-488d-8282-d09a11588425.jpg",
+        'pic0': "https://images.launchbox-app.com/b9cbbcbf-be99-48f1-8f1a-06555126028a.png",
+        'pic1': "https://images.launchbox-app.com/ab248521-abf7-405c-a0f5-85ad8a619a99.jpg",
     },
     "AGB KIRBY DXA7KJ": {
         'uttd': "A7KJ",
@@ -2533,6 +2536,9 @@ games = {
     "DRILL DOZER V49E": {
         'uttd': "V49E",
         'title': "Drill Dozer",
+        'icon0': "https://images.launchbox-app.com/2eba1759-49ec-468b-9be5-7851860fc373.jpg",
+        'pic0': "https://images.launchbox-app.com/fd9a5712-1b85-4c0a-9be9-1800b6a1e242.png",
+        'pic1': "https://images.launchbox-app.com/b493242a-ef47-4b9a-a4a6-bf80a149649c.jpg",
     },
     "DRIVEN      ADVE": {
         'uttd': "ADVE",
@@ -4774,6 +4780,13 @@ games = {
         'uttd': "BBKP",
         'title': "Donkey Kong - King of Swing",
     },
+    "KINGOFSWING BBKE": {
+        'uttd': "BBKE",
+        'title': "DK - King of Swing",
+        'icon0': "https://images.launchbox-app.com/7ec45d38-3a14-4cd8-bca9-4ba37d187115.jpg",
+        'pic0': "https://images.launchbox-app.com/0c62d9f3-de57-4d67-ac8d-b7b22ae5b3e7.png",
+        'pic1': "https://images.launchbox-app.com/36996940-e4fd-40d0-87a4-79ad94d9d0a3.jpg",
+    },
     "KINNIKU AGB AK4J": {
         'uttd': "AK4J",
         'title': "Kinniku Banzuke - Kongou-kun no Daibouken!",
@@ -5465,6 +5478,9 @@ games = {
     "MARIOVSDK   BM5E": {
         'uttd': "BM5E",
         'title': "Mario vs. Donkey Kong",
+        'icon0': "https://images.launchbox-app.com/1272bf5e-9eb4-4d7d-8b53-44cf420c1e31.jpg",
+        'pic0': "https://images.launchbox-app.com/db553036-2cbf-4efa-b3f3-09fd2d2b1adc.png",
+        'pic1': "https://images.launchbox-app.com/57b8c4e0-62b6-4a56-80ef-42d4cec8104c.jpg",
     },
     "MARIOVSDK   BM5J": {
         'uttd': "BM5J",
@@ -7232,6 +7248,8 @@ games = {
     "POKEMON FIREBPRE": {
         'uttd': "BPRE",
         'title': "Pokemon - Fire Red Version",
+        'icon0': "https://images.launchbox-app.com/5f095e0d-7bb8-4e57-a54c-4e9cc30fa032.jpg",
+        'pic0': "https://images.launchbox-app.com/6cd46a01-b6db-4e0f-bc04-81981af6a631.png",
     },
     "POKEMON FIREBPRF": {
         'uttd': "BPRF",
@@ -10396,6 +10414,9 @@ games = {
     "WARIOLANDE  AWAE": {
         'uttd': "AWAE",
         'title': "Wario Land 4",
+        'icon0': "https://images.launchbox-app.com/7b6300c1-a7f7-438f-89b8-943f08ecaee2.jpg",
+        'pic0': "https://images.launchbox-app.com/800c43a1-87fc-4d21-9baa-732d20efb92d.png",
+        'pic1': "https://images.launchbox-app.com/1462480a-c305-47fa-a1f1-8ebe9b1c8b6f.jpg",
     },
     "WARIOTWISTEDRZWE": {
         'uttd': "RZWE",
@@ -10912,9 +10933,9 @@ games = {
     "ZEROMISSIONEBMXE": {
         'uttd': "BMXE",
         'title': "Metroid - Zero Mission",
-        'icon0': 'https://images.launchbox-app.com/a2331b18-0475-4f67-bb6a-9f928fe62474.jpg',
+        'icon0': 'https://images.launchbox-app.com/83842f45-8717-4e55-8b25-dd8afa5cc257.jpg',
         'pic0': 'https://images.launchbox-app.com/9fd48d9e-d7f4-41e9-9019-1a78d014020a.png',
-        'pic1': 'https://images.launchbox-app.com/d64b324c-7512-4a6a-b84c-3c577f5015fb.jpg',
+        'pic1': 'https://images.launchbox-app.com/6315a8b3-aa45-4448-b6f0-1c840cee6573.jpg',
         'snd0': 'https://www.youtube.com/watch?v=9sC4wlz4zrY&list=PLA4B22C847C11C106&index=1',
     },
     "ZEROMISSIONJBMXJ": {
