@@ -14,8 +14,8 @@ import tempfile
 import zipfile
 
 from PIL import Image, ImageDraw, ImageFont
-from pytube import YouTube
-from pytube.contrib.search import Search
+from pytubefix import YouTube
+from pytubefix.contrib.search import Search
 
 from gamedb import games
 from riff import copy_riff, create_riff, parse_riff
@@ -170,7 +170,7 @@ def get_pic0(f):
     img = pic0.resize((155, 90), Image.Resampling.BILINEAR)
     image = Image.new(img.mode, (310, 180), (0,0,0)).convert('RGBA')
     image.putalpha(0)
-    image.paste(img, (72,45))
+    image.paste(img, (92,65))
 
     i = io.BytesIO()
     image.save(i, format='PNG')
