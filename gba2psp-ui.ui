@@ -1,0 +1,397 @@
+<?xml version='1.0' encoding='utf-8'?>
+<interface version="1.4" author="PygubuDesigner 0.41.2">
+  <project>
+    <settings />
+    <customwidgets />
+  </project>
+  <object class="ttk.Frame" id="top_frame">
+    <property name="height">200</property>
+    <property name="width">300</property>
+    <layout manager="grid">
+      <property name="column">0</property>
+      <property name="row">0</property>
+      <property name="sticky">nw</property>
+    </layout>
+    <child>
+      <object class="ttk.Frame" id="frame2">
+        <property name="height">200</property>
+        <property name="width">200</property>
+        <layout manager="grid">
+          <property name="column">0</property>
+          <property name="columnspan">3</property>
+          <property name="padx">10</property>
+          <property name="pady">5</property>
+          <property name="row">5</property>
+          <property name="sticky">ew</property>
+        </layout>
+        <child>
+          <object class="ttk.Button" id="create_button">
+            <property name="command" type="command" cbtype="simple">on_create_eboot</property>
+            <property name="text" translatable="yes">Create EBOOT.PBP</property>
+            <layout manager="pack">
+              <property name="side">right</property>
+            </layout>
+          </object>
+        </child>
+        <child>
+          <object class="ttk.Button" id="button2">
+            <property name="command" type="command" cbtype="simple">on_reset</property>
+            <property name="text" translatable="yes">Clear</property>
+            <layout manager="pack">
+              <property name="side">left</property>
+            </layout>
+          </object>
+        </child>
+      </object>
+    </child>
+    <child>
+      <object class="ttk.Separator" id="separator3">
+        <property name="orient">horizontal</property>
+        <layout manager="grid">
+          <property name="column">0</property>
+          <property name="columnspan">3</property>
+          <property name="pady">5</property>
+          <property name="row">2</property>
+          <property name="sticky">ew</property>
+        </layout>
+      </object>
+    </child>
+    <child>
+      <object class="ttk.Frame" id="frame4">
+        <layout manager="grid">
+          <property name="column">1</property>
+          <property name="padx">10</property>
+          <property name="row">1</property>
+          <property name="sticky">nw</property>
+        </layout>
+        <child>
+          <object class="ttk.Checkbutton" id="disable_pic0">
+            <property name="command" type="command" cbtype="simple">on_pic0_disabled</property>
+            <property name="offvalue">off</property>
+            <property name="onvalue">on</property>
+            <property name="text" translatable="yes">Disable PIC0</property>
+            <property name="variable">string:pic0_disabled_variable</property>
+            <layout manager="grid">
+              <property name="column">0</property>
+              <property name="row">0</property>
+              <property name="sticky">w</property>
+            </layout>
+          </object>
+        </child>
+        <child>
+          <object class="ttk.Checkbutton" id="disable_snd0">
+            <property name="command" type="command" cbtype="simple">on_snd0_disabled</property>
+            <property name="offvalue">off</property>
+            <property name="onvalue">on</property>
+            <property name="text" translatable="yes">Disable SND0</property>
+            <property name="variable">string:snd0_disabled_variable</property>
+            <layout manager="grid">
+              <property name="column">0</property>
+              <property name="row">2</property>
+              <property name="sticky">w</property>
+            </layout>
+          </object>
+        </child>
+        <child>
+          <object class="ttk.Checkbutton" id="disable_pic1">
+            <property name="command" type="command" cbtype="simple">on_pic1_disabled</property>
+            <property name="offvalue">off</property>
+            <property name="onvalue">on</property>
+            <property name="text" translatable="yes">Disable PIC1</property>
+            <property name="variable">string:pic1_disabled_variable</property>
+            <layout manager="grid">
+              <property name="column">0</property>
+              <property name="row">1</property>
+              <property name="sticky">w</property>
+            </layout>
+          </object>
+        </child>
+      </object>
+    </child>
+    <child>
+      <object class="ttk.Frame" id="frame7">
+        <property name="height">200</property>
+        <property name="width">200</property>
+        <layout manager="grid">
+          <property name="column">1</property>
+          <property name="row">0</property>
+          <property name="sticky">nw</property>
+        </layout>
+        <child>
+          <object class="ttk.Frame" id="preview">
+            <property name="height">200</property>
+            <property name="padding">20</property>
+            <property name="width">200</property>
+            <layout manager="grid">
+              <property name="column">1</property>
+              <property name="row">0</property>
+              <property name="sticky">n</property>
+            </layout>
+            <child>
+              <object class="ttk.Frame" id="frame8">
+                <property name="height">200</property>
+                <property name="width">200</property>
+                <layout manager="grid">
+                  <property name="column">0</property>
+                  <property name="columnspan">3</property>
+                  <property name="row">2</property>
+                  <property name="sticky">nw</property>
+                </layout>
+                <child>
+                  <object class="ttk.Label" id="label4">
+                    <property name="text" translatable="yes">Preview:</property>
+                    <layout manager="pack" />
+                  </object>
+                </child>
+                <child>
+                  <object class="tk.Canvas" id="preview_canvas">
+                    <property name="background">white</property>
+                    <property name="borderwidth">1</property>
+                    <property name="height">216</property>
+                    <property name="width">384</property>
+                    <layout manager="pack" />
+                  </object>
+                </child>
+              </object>
+            </child>
+          </object>
+        </child>
+        <child>
+          <object class="ttk.Frame" id="images">
+            <property name="height">200</property>
+            <property name="width">200</property>
+            <layout manager="grid">
+              <property name="column">0</property>
+              <property name="row">0</property>
+            </layout>
+            <child>
+              <object class="ttk.Frame" id="icon0">
+                <property name="height">200</property>
+                <property name="width">200</property>
+                <layout manager="grid">
+                  <property name="column">0</property>
+                  <property name="row">0</property>
+                </layout>
+                <child>
+                  <object class="tk.Canvas" id="icon0_canvas">
+                    <property name="background">white</property>
+                    <property name="borderwidth">1</property>
+                    <property name="height">80</property>
+                    <property name="width">80</property>
+                    <layout manager="grid">
+                      <property name="column">0</property>
+                      <property name="row">1</property>
+                    </layout>
+                  </object>
+                </child>
+                <child>
+                  <object class="ttk.Label" id="icon0_or_disc">
+                    <property name="text" translatable="yes">ICON0</property>
+                    <layout manager="grid">
+                      <property name="column">0</property>
+                      <property name="row">0</property>
+                    </layout>
+                  </object>
+                </child>
+              </object>
+            </child>
+            <child>
+              <object class="ttk.Frame" id="pic0">
+                <property name="height">200</property>
+                <property name="width">200</property>
+                <layout manager="grid">
+                  <property name="column">0</property>
+                  <property name="row">1</property>
+                </layout>
+                <child>
+                  <object class="tk.Canvas" id="pic0_canvas">
+                    <property name="background">white</property>
+                    <property name="borderwidth">1</property>
+                    <property name="height">80</property>
+                    <property name="width">128</property>
+                    <layout manager="grid">
+                      <property name="column">0</property>
+                      <property name="row">1</property>
+                    </layout>
+                  </object>
+                </child>
+                <child>
+                  <object class="ttk.Label" id="pic0_or_back">
+                    <property name="text" translatable="yes">PIC0</property>
+                    <layout manager="grid">
+                      <property name="column">0</property>
+                      <property name="row">0</property>
+                    </layout>
+                  </object>
+                </child>
+              </object>
+            </child>
+            <child>
+              <object class="ttk.Frame" id="frame5">
+                <property name="height">200</property>
+                <property name="width">200</property>
+                <layout manager="grid">
+                  <property name="column">0</property>
+                  <property name="row">2</property>
+                </layout>
+                <child>
+                  <object class="tk.Canvas" id="pic1_canvas">
+                    <property name="background">white</property>
+                    <property name="borderwidth">1</property>
+                    <property name="height">80</property>
+                    <property name="width">128</property>
+                    <layout manager="grid">
+                      <property name="column">0</property>
+                      <property name="row">1</property>
+                    </layout>
+                  </object>
+                </child>
+                <child>
+                  <object class="ttk.Label" id="pic1_or_back">
+                    <property name="text" translatable="yes">PIC1</property>
+                    <layout manager="grid">
+                      <property name="column">0</property>
+                      <property name="row">0</property>
+                    </layout>
+                  </object>
+                </child>
+              </object>
+            </child>
+          </object>
+        </child>
+      </object>
+    </child>
+    <child>
+      <object class="ttk.Frame" id="frame9">
+        <property name="width">200</property>
+        <layout manager="grid">
+          <property name="column">0</property>
+          <property name="row">0</property>
+          <property name="sticky">nw</property>
+        </layout>
+        <child>
+          <object class="ttk.Frame" id="discs">
+            <property name="height">200</property>
+            <property name="width">200</property>
+            <layout manager="grid">
+              <property name="column">0</property>
+              <property name="padx">10</property>
+              <property name="row">0</property>
+            </layout>
+            <child>
+              <object class="pygubu.builder.widgets.pathchooserinput" id="disc1">
+                <property name="state">normal</property>
+                <property name="textvariable">string:disc1_variable</property>
+                <property name="title" translatable="yes">d1</property>
+                <property name="type">file</property>
+                <bind sequence="&lt;&lt;PathChooserPathChanged&gt;&gt;" handler="on_path_changed" add="" />
+                <layout manager="grid">
+                  <property name="column">0</property>
+                  <property name="row">1</property>
+                </layout>
+              </object>
+            </child>
+            <child>
+              <object class="ttk.Label" id="label1">
+                <property name="text" translatable="yes">ROM:</property>
+                <layout manager="grid">
+                  <property name="column">0</property>
+                  <property name="row">0</property>
+                  <property name="sticky">w</property>
+                </layout>
+              </object>
+            </child>
+            <child>
+              <object class="ttk.Separator" id="separator4">
+                <property name="orient">horizontal</property>
+                <layout manager="grid">
+                  <property name="column">0</property>
+                  <property name="columnspan">2</property>
+                  <property name="pady">5</property>
+                  <property name="row">6</property>
+                  <property name="sticky">ew</property>
+                </layout>
+              </object>
+            </child>
+          </object>
+        </child>
+        <child>
+          <object class="ttk.Frame" id="frame1">
+            <property name="height">10</property>
+            <property name="width">200</property>
+            <layout manager="grid">
+              <property name="column">0</property>
+              <property name="row">2</property>
+              <property name="sticky">ew</property>
+            </layout>
+            <child>
+              <object class="ttk.Frame" id="title_frame">
+                <property name="height">200</property>
+                <property name="width">200</property>
+                <layout manager="grid">
+                  <property name="column">0</property>
+                  <property name="padx">10</property>
+                  <property name="row">1</property>
+                  <property name="sticky">w</property>
+                </layout>
+                <child>
+                  <object class="ttk.Label" id="label9">
+                    <property name="text" translatable="yes">Title:</property>
+                    <layout manager="grid">
+                      <property name="column">0</property>
+                      <property name="row">0</property>
+                      <property name="sticky">w</property>
+                    </layout>
+                  </object>
+                </child>
+                <child>
+                  <object class="ttk.Entry" id="title" named="True">
+                    <property name="textvariable">string:title_variable</property>
+                    <layout manager="grid">
+                      <property name="column">1</property>
+                      <property name="row">0</property>
+                    </layout>
+                  </object>
+                </child>
+              </object>
+            </child>
+          </object>
+        </child>
+      </object>
+    </child>
+    <child>
+      <object class="ttk.Frame" id="output_frame">
+        <layout manager="grid">
+          <property name="column">0</property>
+          <property name="columnspan">1</property>
+          <property name="padx">10</property>
+          <property name="pady">5</property>
+          <property name="row">1</property>
+          <property name="sticky">nw</property>
+        </layout>
+        <child>
+          <object class="ttk.Label" id="label15">
+            <property name="text" translatable="yes">Output Directory</property>
+            <layout manager="grid">
+              <property name="column">0</property>
+              <property name="row">0</property>
+              <property name="sticky">ew</property>
+            </layout>
+          </object>
+        </child>
+        <child>
+          <object class="pygubu.builder.widgets.pathchooserinput" id="dir_input">
+            <property name="textvariable">string:pkgdir_variable</property>
+            <property name="type">directory</property>
+            <bind sequence="&lt;&lt;PathChooserPathChanged&gt;&gt;" handler="on_dir_changed" add="" />
+            <layout manager="grid">
+              <property name="column">0</property>
+              <property name="row">1</property>
+              <property name="sticky">w</property>
+            </layout>
+          </object>
+        </child>
+      </object>
+    </child>
+  </object>
+</interface>

@@ -92,10 +92,7 @@ def get_icon0(f):
         icon0 = Image.open(f)
 
 
-    if icon0.size[0] / icon0.size[1] < 1.4 and icon0.size[0] / icon0.size[1] > 0.75:
-        image = icon0.resize((80, 80), Image.Resampling.BILINEAR)
-    else:
-        image = icon0.resize((144, 80), Image.Resampling.BILINEAR)
+    image = icon0.resize((80, 80), Image.Resampling.BILINEAR)
     i = io.BytesIO()
     image.save(i, format='PNG')
     i.seek(0)
@@ -123,6 +120,7 @@ def convert_snd0_to_at3(snd0, at3, duration, max_size, subdir = './'):
                 subprocess.run(['atracdenc.exe', '--encode=atrac3', '-i', tmp_wav, '-o', tmp_snd0], check=True)
         except:
             print('XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX\natracdenc not found.\nCan not create SND0.AT3\nPlease see README file for how to install atracdenc\nXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX')
+            return None
         print('Converting EA3 to AT3 file')
         create_riff(tmp_snd0, at3, number_of_samples=int(len(s['data']['data'])/4), max_data_size=0, loop=True)
         if os.stat(at3).st_size < max_size:
@@ -209,7 +207,33 @@ def read_game(game):
     with open(game, 'rb') as f:
         return f.read()
 
+def create_eboot(game, game_id, icon0, pic0, pic1, snd0, outdir):
+    print('Installing to', outdir + '/' + game_id)
+    shutil.copytree('TempGBA-Single-Game', outdir + '/' + game_id,
+                    dirs_exist_ok=True)
+
     
+    with open('TempGBA-Single-Game/PBOOT.PBP', 'rb') as f:
+        eboot = read_eboot(f)
+
+    if icon0:
+        eboot['icon0.png'] = icon0
+    if pic0:
+        eboot['pic0.png'] = pic0
+    if pic1:
+        eboot['pic1.png'] = pic1
+    if snd0:
+        eboot['snd0.at3'] = snd0
+
+    print('Writing', outdir + '/' + game_id + '/PBOOT.PBP')
+    with open(outdir + '/' + game_id + '/PBOOT.PBP', 'wb') as f:
+        write_eboot(f, eboot)
+        
+    with open(outdir + '/' + game_id + '/roms/game.gba', 'wb') as o:
+        print('Writing', outdir + '/' + game_id + '/roms/game.gba')
+        o.write(game)
+
+
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument('-v', action='store_true', help='Verbose')
@@ -264,27 +288,4 @@ if __name__ == "__main__":
         snd0 = get_snd0(games[game_id]['snd0'], td.name)
         
         
-    print('Installing to', args.psp_game_dir + '/' + game_id)
-    shutil.copytree('TempGBA-Single-Game', args.psp_game_dir + '/' + game_id,
-                    dirs_exist_ok=True)
-
-    
-    with open('TempGBA-Single-Game/PBOOT.PBP', 'rb') as f:
-        eboot = read_eboot(f)
-
-    if icon0:
-        eboot['icon0.png'] = icon0
-    if pic0:
-        eboot['pic0.png'] = pic0
-    if pic1:
-        eboot['pic1.png'] = pic1
-    if snd0:
-        eboot['snd0.at3'] = snd0
-
-    print('Writing', args.psp_game_dir + '/' + game_id + '/PBOOT.PBP')
-    with open(args.psp_game_dir + '/' + game_id + '/PBOOT.PBP', 'wb') as f:
-        write_eboot(f, eboot)
-        
-    with open(args.psp_game_dir + '/' + game_id + '/roms/game.gba', 'wb') as o:
-        print('Writing', args.psp_game_dir + '/' + game_id + '/roms/game.gba')
-        o.write(game)
+    create_eboot(game, game_id, icon0, pic0, pic1, snd0, args.psp_game_dir)
