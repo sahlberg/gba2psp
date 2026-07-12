@@ -115,7 +115,7 @@ def convert_snd0_to_at3(snd0, at3, duration, max_size, subdir = './'):
         print('Creating temporary ATRAC3 file', tmp_snd0)
         try:
             if os.name == 'posix':
-                subprocess.run(['atracdenc', '--encode=atrac3', '-i', tmp_wav, '-o', tmp_snd0], check=True)
+                subprocess.run(['atracdenc/src/atracdenc', '--encode=atrac3', '-i', tmp_wav, '-o', tmp_snd0], check=True)
             else:
                 subprocess.run(['atracdenc.exe', '--encode=atrac3', '-i', tmp_wav, '-o', tmp_snd0], check=True)
         except:
@@ -144,9 +144,11 @@ def get_snd0(snd0, td):
         subprocess.call(['ffmpeg.exe', '-y', '-i', snd0, '-filter:a', 'atempo=0.91', '-ar', '44100', '-ac', '2', td + '/snd0_tmp.wav'])
 
     convert_snd0_to_at3(td + '/snd0_tmp.wav', td + '/SND0.AT3', 59, 500000, subdir=td)
-    with open(td + '/SND0.AT3', 'rb') as i:
-        return i.read()
-
+    try:
+        with open(td + '/SND0.AT3', 'rb') as i:
+            return i.read()
+    except:
+        return None
         
 def get_pic0(f):
     if f[:8] == 'https://':
