@@ -191,7 +191,8 @@ class GBA2PSPApp:
             self.icon0_raw = None
             if not self.icon0 and 'icon0' in games[self.game_id]:
                 self.icon0_raw = get_icon0(games[self.game_id]['icon0'])
-                self.icon0 = Image.open(io.BytesIO(self.icon0_raw))
+                if self.icon0_raw:
+                    self.icon0 = Image.open(io.BytesIO(self.icon0_raw))
             if self.icon0:
                 temp_files.append(self.subdir + 'ICON0.PNG')
                 self.icon0.resize((80,80), Image.Resampling.HAMMING).save(self.subdir + 'ICON0.PNG')
@@ -211,7 +212,8 @@ class GBA2PSPApp:
             self.pic0_raw = None
             if not self.pic0:
                 self.pic0_raw = get_pic0(games[self.game_id]['pic0'])
-                self.pic0 = Image.open(io.BytesIO(self.pic0_raw))
+                if self.pic0_raw:
+                    self.pic0 = Image.open(io.BytesIO(self.pic0_raw))
             if self.pic0:
                 temp_files.append(self.subdir + 'PIC0.PNG')
                 self.pic0.resize((128,80), Image.Resampling.HAMMING).save(self.subdir + 'PIC0.PNG')
@@ -225,7 +227,8 @@ class GBA2PSPApp:
             self.pic1_raw = None
             if not self.pic1:
                 self.pic1_raw = get_pic1(games[self.game_id]['pic1'])
-                self.pic1 = Image.open(io.BytesIO(self.pic1_raw))
+                if self.pic1_raw:
+                    self.pic1 = Image.open(io.BytesIO(self.pic1_raw))
             if self.pic1:
                 temp_files.append(self.subdir + 'PIC1.PNG')
                 self.pic1.resize((128,80), Image.Resampling.HAMMING).save(self.subdir + 'PIC1.PNG')
