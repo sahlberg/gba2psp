@@ -78,25 +78,28 @@ def write_eboot(f, eboot):
     offset = write_blob(f, offset, eboot, 0x24, 'data.psar')
 
 def get_icon0(f):
-    if f[:8] == 'https://':
-        ret = requests.get(f)
-        print('Downloading ICON0 from', f)
-        if ret.status_code != 200:
-            print('Failed to download', f)
-            return None
-        if ret.apparent_encoding:
-            icon0 = Image.open(io.BytesIO(ret.content.decode(ret.apparent_encoding)))
+    try:
+        if f[:8] == 'https://':
+            ret = requests.get(f)
+            print('Downloading ICON0 from', f)
+            if ret.status_code != 200:
+                print('Failed to download', f)
+                return None
+            if ret.apparent_encoding:
+                icon0 = Image.open(io.BytesIO(ret.content.decode(ret.apparent_encoding)))
+            else:
+                icon0 = Image.open(io.BytesIO(ret.content))
         else:
-            icon0 = Image.open(io.BytesIO(ret.content))
-    else:
-        icon0 = Image.open(f)
+            icon0 = Image.open(f)
 
 
-    image = icon0.resize((80, 80), Image.Resampling.BILINEAR)
-    i = io.BytesIO()
-    image.save(i, format='PNG')
-    i.seek(0)
-    return i.read()
+        image = icon0.resize((80, 80), Image.Resampling.BILINEAR)
+        i = io.BytesIO()
+        image.save(i, format='PNG')
+        i.seek(0)
+        return i.read()
+    except:
+        return None
 
 
 def convert_snd0_to_at3(snd0, at3, duration, max_size, subdir = './'):
@@ -117,7 +120,7 @@ def convert_snd0_to_at3(snd0, at3, duration, max_size, subdir = './'):
             if os.name == 'posix':
                 subprocess.run(['atracdenc/src/atracdenc', '--encode=atrac3', '-i', tmp_wav, '-o', tmp_snd0], check=True)
             else:
-                subprocess.run(['atracdenc.exe', '--encode=atrac3', '-i', tmp_wav, '-o', tmp_snd0], check=True)
+                subprocess.run(['atrackdenc/src/atracdenc.exe', '--encode=atrac3', '-i', tmp_wav, '-o', tmp_snd0], check=True)
         except:
             print('XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX\natracdenc not found.\nCan not create SND0.AT3\nPlease see README file for how to install atracdenc\nXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX')
             return None
@@ -130,74 +133,81 @@ def convert_snd0_to_at3(snd0, at3, duration, max_size, subdir = './'):
 
 
 def get_snd0(snd0, td):
-    if snd0[:24] == 'https://www.youtube.com/':
-        try:
-            fn = YouTube(snd0).streams.filter(only_audio=True)[0].download(td)
-        except:
-            print('Failed to download', snd0)
-            return None
-        snd0 = fn
-
-    if os.name == 'posix':
-        subprocess.call(['ffmpeg', '-y', '-i', snd0, '-filter:a', 'atempo=0.91', '-ar', '44100', '-ac', '2', td + '/snd0_tmp.wav'])
-    else:
-        subprocess.call(['ffmpeg.exe', '-y', '-i', snd0, '-filter:a', 'atempo=0.91', '-ar', '44100', '-ac', '2', td + '/snd0_tmp.wav'])
-
-    convert_snd0_to_at3(td + '/snd0_tmp.wav', td + '/SND0.AT3', 59, 500000, subdir=td)
     try:
+        if snd0[:24] == 'https://www.youtube.com/':
+            try:
+                fn = YouTube(snd0).streams.filter(only_audio=True)[0].download(td)
+            except:
+                print('Failed to download', snd0)
+                return None
+            snd0 = fn
+
+        if os.name == 'posix':
+            subprocess.call(['ffmpeg', '-y', '-i', snd0, '-filter:a', 'atempo=0.91', '-ar', '44100', '-ac', '2', td + '/snd0_tmp.wav'])
+        else:
+            subprocess.call(['ffmpeg.exe', '-y', '-i', snd0, '-filter:a', 'atempo=0.91', '-ar', '44100', '-ac', '2', td + '/snd0_tmp.wav'])
+
+        convert_snd0_to_at3(td + '/snd0_tmp.wav', td + '/SND0.AT3', 59, 500000, subdir=td)
         with open(td + '/SND0.AT3', 'rb') as i:
             return i.read()
     except:
         return None
-        
+
+    
 def get_pic0(f):
-    if f[:8] == 'https://':
-        ret = requests.get(f)
-        print('Downloading PIC0 from', f)
-        if ret.status_code != 200:
-            print('Failed to download', f)
-            return None
-        if ret.apparent_encoding:
-            pic0 = Image.open(io.BytesIO(ret.content.decode(ret.apparent_encoding)))
+    try:
+        if f[:8] == 'https://':
+            ret = requests.get(f)
+            print('Downloading PIC0 from', f)
+            if ret.status_code != 200:
+                print('Failed to download', f)
+                return None
+            if ret.apparent_encoding:
+                pic0 = Image.open(io.BytesIO(ret.content.decode(ret.apparent_encoding)))
+            else:
+                pic0 = Image.open(io.BytesIO(ret.content))
         else:
-            pic0 = Image.open(io.BytesIO(ret.content))
-    else:
-        pic0 = Image.open(f)
+            pic0 = Image.open(f)
 
 
-    # Scale it down a bit so it will not cover most of the screen
-    #image = pic0.resize((310, 180), Image.Resampling.BILINEAR)
-    img = pic0.resize((155, 90), Image.Resampling.BILINEAR)
-    image = Image.new(img.mode, (310, 180), (0,0,0)).convert('RGBA')
-    image.putalpha(0)
-    image.paste(img, (92,65))
+        # Scale it down a bit so it will not cover most of the screen
+        #image = pic0.resize((310, 180), Image.Resampling.BILINEAR)
+        img = pic0.resize((155, 90), Image.Resampling.BILINEAR)
+        image = Image.new(img.mode, (310, 180), (0,0,0)).convert('RGBA')
+        image.putalpha(0)
+        image.paste(img, (92,65))
 
-    i = io.BytesIO()
-    image.save(i, format='PNG')
-    i.seek(0)
-    return i.read()
-
+        i = io.BytesIO()
+        image.save(i, format='PNG')
+        i.seek(0)
+        return i.read()
+    except:
+        return None
+    
 def get_pic1(f):
-    if f[:8] == 'https://':
-        ret = requests.get(f)
-        print('Downloading PIC1 from', f)
-        if ret.status_code != 200:
-            print('Failed to download', f)
-            return None
-        if ret.apparent_encoding:
-            pic1 = Image.open(io.BytesIO(ret.content.decode(ret.apparent_encoding)))
+    try:
+        if f[:8] == 'https://':
+            ret = requests.get(f)
+            print('Downloading PIC1 from', f)
+            if ret.status_code != 200:
+                print('Failed to download', f)
+                return None
+            if ret.apparent_encoding:
+                pic1 = Image.open(io.BytesIO(ret.content.decode(ret.apparent_encoding)))
+            else:
+                pic1 = Image.open(io.BytesIO(ret.content))
         else:
-            pic1 = Image.open(io.BytesIO(ret.content))
-    else:
-        pic1 = Image.open(f)
+            pic1 = Image.open(f)
 
 
-    image = pic1.resize((480, 272), Image.Resampling.BILINEAR)
-    i = io.BytesIO()
-    image.save(i, format='PNG')
-    i.seek(0)
-    return i.read()
-
+        image = pic1.resize((480, 272), Image.Resampling.BILINEAR)
+        i = io.BytesIO()
+        image.save(i, format='PNG')
+        i.seek(0)
+        return i.read()
+    except:
+        return None
+    
 def read_game(game):
     if game[-4:].lower() == '.zip':
         z = zipfile.ZipFile(game)
@@ -210,6 +220,9 @@ def read_game(game):
         return f.read()
 
 def create_eboot(game, game_id, icon0, pic0, pic1, snd0, outdir):
+    if not outdir:
+        outdir = '.'
+
     print('Installing to', outdir + '/' + game_id)
     shutil.copytree('TempGBA-Single-Game', outdir + '/' + game_id,
                     dirs_exist_ok=True)

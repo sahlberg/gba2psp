@@ -1,0 +1,68 @@
+name: Python package
+
+on: [push, pull_request]
+
+jobs:
+  build-windows:
+    name: Windows build
+    runs-on: windows-2022
+
+    strategy:
+      matrix:
+        python-version: ["3.9"]
+
+    steps:
+      - uses: actions/checkout@v4
+      - name: Add msbuild to PATH
+        uses: microsoft/setup-msbuild@v2
+      - name: Set up Python ${{ matrix.python-version }}
+        uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+      - name: Install required Python packages
+        run:   |
+          pip install pillow
+          pip install requests
+          pip install pyinstaller
+          pip install pygubu
+          pip install tkinterDnD2
+          pip install pytubefix
+          pip install PyPDF2
+      - name: Install ATRACDENC
+        run:   |
+          Invoke-WebRequest -OutFile atracdenc-x86_0.1.1.zip https://github.com/dcherednik/atracdenc/releases/download/0.1.1/atracdenc-win-x86_0.1.1.zip
+          unzip -j atracdenc-x86_0.1.1 -x README.TXT
+      - name: Install FFMPEG
+        run:   |
+          Invoke-WebRequest -OutFile ffmpeg-release-essentials.zip https://www.gyan.dev/ffmpeg/builds/ffmpeg-release-essentials.zip
+          unzip -j ffmpeg-release-essentials.zip -x */doc/* -x */presets/* -x */README.txt -x */LICENSE -x */bin/ffplay.exe -x */bin/ffprobe.exe
+      - name: Install TempGBA-Single-Game-V2
+        run:   |
+          Invoke-WebRequest -OutFile TempGBA-Single-Game-v2.zip https://github.com/GrabowskiDev/TempGBA4PSP-Single-game/releases/download/v2.0/TempGBA-Single-Game-v2.zip
+          unzip TempGBA-Single-Game-v2.zip
+      - name: Build gba2psp
+        run:   |
+          pyinstaller gba2psp.py
+      - name: Build gba2psp-ui
+        run:   |
+          pyinstaller --add-data "gba2psp-ui.ui;." gba2psp-ui.py --hidden-import pygubu.builder.tkstdwidgets --hidden-import pygubu.builder.ttkstdwidgets --hidden-import pygubu.builder.widgets.pathchooserinput --collect-all tkinterdnd2
+      - name: Update dist/gba2psp
+        run:   |
+          mkdir dist/gba2psp/atracdenc
+          mkdir dist/gba2psp/atracdenc/src
+          cp atracdenc.exe dist/gba2psp/atracdenc/src/.
+          cp ffmpeg.exe dist/gba2psp/.
+          cp -r -Force TempGBA-Single-Game dist/gba2psp/.
+      - name: Update dist/gba2psp-ui
+        run:   |
+          mkdir dist/gba2psp-ui/atracdenc
+          mkdir dist/gba2psp-ui/atracdenc/src
+          cp atracdenc.exe dist/gba2psp-ui/atracdenc/src/.
+          cp ffmpeg.exe dist/gba2psp-ui/.
+          cp -r -Force TempGBA-Single-Game dist/gba2psp/.
+          cp -r -Force dist/gba2psp/* dist/gba2psp-ui/.
+      - name: Upload gba2psp-ui artefact
+        uses: actions/upload-artifact@v4
+        with: 
+          name: gba2psp-ui
+          path: dist/gba2psp-ui
