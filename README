@@ -61,7 +61,6 @@ https://github.com/GrabowskiDev/TempGBA4PSP-Single-game/releases/tag/v2.0
 
 Ffmpeg. Install this utility and make it is reachable through the path.
 
-Atracdenc. Install this utility and make sure that the atracdenc program
-is reachable through path.
+Atracdenc. Install this from git as a subdirectory.
 Atracdenc can be found at https://github.com/dcherednik/atracdenc
 
