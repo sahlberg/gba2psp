@@ -7248,10 +7248,18 @@ games = {
     "POKEMON FIREBPRD": {
         'uttd': "BPRD",
         'title': "Pokemon - Feuerrote Edition",
+        'icon0': 'https://images.launchbox-app.com//3fd5cb91-4455-4909-9865-ec4799b4da3d.jpg',
+        'pic0': 'https://images.launchbox-app.com//f30df42e-d0b2-4b44-8b9e-052d7ded0a12.png',
+        'pic1': 'https://images.launchbox-app.com//3ec8f9b3-6d04-4c38-97c0-5f0ecbbde7a8.jpg',
+        'snd0': 'https://www.youtube.com/watch?v=dfRLeXXsdnM&list=PL61BCBEA83232A814&index=1',
     },
     "POKEMON FIREBPRE": {
         'uttd': "BPRE",
         'title': "Pokemon - Fire Red Version",
+        'icon0': 'https://images.launchbox-app.com//2198e0db-77df-4104-a30d-627e5683dd3e.jpg',
+        'pic0': 'https://images.launchbox-app.com//6cd46a01-b6db-4e0f-bc04-81981af6a631.png',
+        'pic1': 'https://images.launchbox-app.com//3ec8f9b3-6d04-4c38-97c0-5f0ecbbde7a8.jpg',
+        'snd0': 'https://www.youtube.com/watch?v=dfRLeXXsdnM&list=PL61BCBEA83232A814&index=1',
     },
     "POKEMON FIREBPRF": {
         'uttd': "BPRF",
@@ -7268,6 +7276,10 @@ games = {
     "POKEMON FIREBPRS": {
         'uttd': "BPRS",
         'title': "Pokemon - Edicion Rojo Fuego",
+        'icon0': 'https://images.launchbox-app.com//5bdcd75d-d0ec-497c-af35-4f342834866a.jpg',
+        'pic0': 'https://images.launchbox-app.com//01ccca56-d1dd-4459-a365-5343a2e6a807.png',
+        'pic1': 'https://images.launchbox-app.com//3ec8f9b3-6d04-4c38-97c0-5f0ecbbde7a8.jpg',
+        'snd0': 'https://www.youtube.com/watch?v=dfRLeXXsdnM&list=PL61BCBEA83232A814&index=1',
     },
     "POKEMON LEAFBPGD": {
         'uttd': "BPGD",

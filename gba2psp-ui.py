@@ -26,7 +26,7 @@ except:
 from PIL import Image
 from gamedb import games
 
-from gba2psp import read_game, get_icon0, get_pic0, get_pic1, create_eboot
+from gba2psp import read_game, get_icon0, get_pic0, get_pic1, get_snd0, create_eboot
 
 verbose = False
 temp_files = []
