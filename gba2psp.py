@@ -115,7 +115,7 @@ def convert_snd0_to_at3(snd0, at3, duration, max_size, subdir = './'):
         print('Creating temporary ATRAC3 file', tmp_snd0)
         try:
             if os.name == 'posix':
-                subprocess.run(['atracdenc/src/atracdenc', '--encode=atrac3', '-i', tmp_wav, '-o', tmp_snd0], check=True)
+                subprocess.run(['atracdenc', '--encode=atrac3', '-i', tmp_wav, '-o', tmp_snd0], check=True)
             else:
                 subprocess.run(['atracdenc.exe', '--encode=atrac3', '-i', tmp_wav, '-o', tmp_snd0], check=True)
         except:
