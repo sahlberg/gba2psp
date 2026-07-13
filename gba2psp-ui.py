@@ -210,7 +210,7 @@ class GBA2PSPApp:
             print('Fetching PIC0') if verbose else None
             self.pic0 = None
             self.pic0_raw = None
-            if not self.pic0:
+            if not self.pic0 and 'pic0' in games[self.game_id]:
                 self.pic0_raw = get_pic0(games[self.game_id]['pic0'])
                 if self.pic0_raw:
                     self.pic0 = Image.open(io.BytesIO(self.pic0_raw))
@@ -225,7 +225,7 @@ class GBA2PSPApp:
             print('Fetching PIC1') if verbose else None
             self.pic1 = None
             self.pic1_raw = None
-            if not self.pic1:
+            if not self.pic1 and 'pic1' in games[self.game_id]:
                 self.pic1_raw = get_pic1(games[self.game_id]['pic1'])
                 if self.pic1_raw:
                     self.pic1 = Image.open(io.BytesIO(self.pic1_raw))
