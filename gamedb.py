@@ -3489,14 +3489,23 @@ games = {
     "GBAZELDA    AZLE": {
         'uttd': "AZLE",
         'title': "Legend of Zelda, The - A Link to the Past & Four Swords",
+        'icon0': 'https://images.launchbox-app.com//1600a9d8-0b1b-403a-ab62-ab1d7813d4d6.jpg',
+        'pic0': 'https://images.launchbox-app.com//d90bce59-515b-4a55-8632-892a2dd34c03.png',
+        'pic1': 'https://images.launchbox-app.com//b74af433-e658-4749-af21-34f82eae5e4a.jpg',
     },
     "GBAZELDA    AZLJ": {
         'uttd': "AZLJ",
         'title': "Zelda no Densetsu - Kamigami no Triforce & 4tsu no Tsurugi",
+        'icon0': 'https://images.launchbox-app.com//8b075b26-2bdd-456c-af80-b85d03342f04.png',
+        'pic0': 'https://images.launchbox-app.com//eb8e7201-76ef-4278-bc45-caf011d9f774.png',
+        'pic1': 'https://images.launchbox-app.com//b74af433-e658-4749-af21-34f82eae5e4a.jpg',
     },
     "GBAZELDA    AZLP": {
         'uttd': "AZLP",
         'title': "Legend of Zelda, The - A Link to the Past & Four Swords",
+        'icon0': 'https://images.launchbox-app.com//ce8ec375-a423-42fd-aa57-49bf4a413ec8.png',
+        'pic0': 'https://images.launchbox-app.com//d90bce59-515b-4a55-8632-892a2dd34c03.png',
+        'pic1': 'https://images.launchbox-app.com//b74af433-e658-4749-af21-34f82eae5e4a.jpg',
     },
     "GBAZELDA MC BZME": {
         'uttd': "BZME",
@@ -3509,15 +3518,15 @@ games = {
     "GBAZELDA MC BZMJ": {
         'uttd': "BZMJ",
         'title': "Zelda no Densetsu - Fushigi no Boushi",
-        'icon0': 'https://images.launchbox-app.com/aa436fc7-6b34-4cb7-87e7-dec315f71573.jpg',
-        'pic0': 'https://images.launchbox-app.com/751983ec-eb5d-4456-ad1f-7a8f8000eb35.png',
+        'icon0': 'https://images.launchbox-app.com//aa436fc7-6b34-4cb7-87e7-dec315f71573.jpg',
+        'pic0': 'https://images.launchbox-app.com//751983ec-eb5d-4456-ad1f-7a8f8000eb35.png',
         'pic1': 'https://images.launchbox-app.com/4827e856-0ee9-46df-81fe-d83f72225588.jpg',
         'snd0': 'https://www.youtube.com/watch?v=B7T9t5Swu0c&list=PL66C3A99730C3F3F2&index=1',
     },
     "GBAZELDA MC BZMP": {
         'uttd': "BZMP",
         'title': "Legend of Zelda, The - The Minish Cap",
-        'icon0': 'https://images.launchbox-app.com/0fe2ca8b-4307-4913-a1b2-46720c1a82d1.jpg',
+        'icon0': 'https://images.launchbox-app.com//16012e29-6193-49ae-86b3-adce4714236c.jpg',
         'pic0': 'https://images.launchbox-app.com/f5d37c8b-60cc-45c1-b459-27055dbe98e7.png',
         'pic1': 'https://images.launchbox-app.com/4827e856-0ee9-46df-81fe-d83f72225588.jpg',
         'snd0': 'https://www.youtube.com/watch?v=B7T9t5Swu0c&list=PL66C3A99730C3F3F2&index=1',
@@ -5840,7 +5849,7 @@ games = {
     "METROID4JPN AMTJ": {
         'uttd': "AMTJ",
         'title': "Metroid Fusion",
-        'icon0': 'https://images.launchbox-app.com/0f4e70dc-3a84-4ac5-86a9-f47f5399c04e.jpg',
+        'icon0': 'https://images.launchbox-app.com//75c37bfe-5ca2-4645-8dab-9d7e5f8cf935.jpg',
         'pic0': 'https://images.launchbox-app.com/86d2ae66-c545-425d-9145-d72e3bba4d6f.png',
         'pic1': 'https://images.launchbox-app.com/6e710e66-3704-409d-ba78-6e78b4b0bcb5.jpg',
         'snd0': 'https://www.youtube.com/watch?v=L-TE2h_XB4w&list=PL71442F24C8795CD7&index=1',
@@ -5848,7 +5857,7 @@ games = {
     "METROID4USA AMTE": {
         'uttd': "AMTE",
         'title': "Metroid Fusion",
-        'icon0': 'https://images.launchbox-app.com/0f4e70dc-3a84-4ac5-86a9-f47f5399c04e.jpg',
+        'icon0': 'https://images.launchbox-app.com//5454ef86-d7e1-415c-b5bd-1464c6c2d78f.jpg',
         'pic0': 'https://images.launchbox-app.com/86d2ae66-c545-425d-9145-d72e3bba4d6f.png',
         'pic1': 'https://images.launchbox-app.com/6e710e66-3704-409d-ba78-6e78b4b0bcb5.jpg',
         'snd0': 'https://www.youtube.com/watch?v=L-TE2h_XB4w&list=PL71442F24C8795CD7&index=1',
