@@ -3690,10 +3690,14 @@ games = {
     "GOLDEN_SUN_BAGFD": {
         'uttd': "AGFD",
         'title': "Golden Sun 2 - Die Vergessene Epoche",
+        'icon0': 'https://images.launchbox-app.com//9be339f3-f025-452e-9660-bf846040d429.jpg',
     },
     "GOLDEN_SUN_BAGFE": {
         'uttd': "AGFE",
         'title': "Golden Sun - The Lost Age",
+        'icon0':' https://images.launchbox-app.com//1655e436-eec9-4e70-9f9d-6673a87c3e72.jpg',
+        'pic0': 'https://gamesdb-images.launchbox.gg/r2_3c8abc4e-a25d-421d-b5b3-f9c283d8be07.png',
+        'pic1': 'https://images.launchbox-app.com//7e31fb5a-656c-497a-97d8-6c7058597814.jpg',
     },
     "GOLDEN_SUN_BAGFF": {
         'uttd': "AGFF",
@@ -3706,6 +3710,7 @@ games = {
     "GOLDEN_SUN_BAGFS": {
         'uttd': "AGFS",
         'title': "Golden Sun - La Edad Perdida",
+        'icon0': 'https://images.launchbox-app.com//b772b632-533c-424b-90ee-054abaae362b.jpg',
     },
     "GOLFMASTER  AGRJ": {
         'uttd': "AGRJ",
@@ -3722,6 +3727,9 @@ games = {
     "GRADIUSGALAXAGAE": {
         'uttd': "AGAE",
         'title': "Gradius Galaxies",
+        'icon0': 'https://images.launchbox-app.com//8327e062-e787-4fc5-97e4-62c7668784a0.jpg',
+        'pic0': 'https://images.launchbox-app.com//2011e6a1-72e0-4098-84a3-e82a6e7231ce.png',
+        'pic1': 'https://gamesdb-images.launchbox.gg/r2_b469bc4e-df97-4fbe-b2c3-ca7510491abf.jpg',
     },
     "GRADIUSGENERAGAJ": {
         'uttd': "AGAJ",
