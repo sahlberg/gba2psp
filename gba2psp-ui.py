@@ -48,7 +48,7 @@ class GBA2PSPApp:
     def __init__(self, master=None):
         self.myrect = None
         self.cue_files = None
-        self.img_files = None
+        self.gba_file = None
         self.game = None
         self.game_id = None
         self.icon0 = None
@@ -135,7 +135,7 @@ class GBA2PSPApp:
         os.mkdir(self.subdir)
 
         self.cue_files = []
-        self.img_files = []
+        self.gba_file = None
         self.game = None
         self.game_id = None
         self.icon0 = None
@@ -189,6 +189,11 @@ class GBA2PSPApp:
             print('Fetching ICON0') if verbose else None
             self.icon0 = None
             self.icon0_raw = None
+            try:
+                self.icon0_raw = Image.open(self.gba_file[:-4] + '.icon0.png')
+                self.icon0 = self.icon0_raw
+            except:
+                True
             if not self.icon0 and 'icon0' in games[self.game_id]:
                 self.icon0_raw = get_icon0(games[self.game_id]['icon0'])
                 if self.icon0_raw:
@@ -210,6 +215,11 @@ class GBA2PSPApp:
             print('Fetching PIC0') if verbose else None
             self.pic0 = None
             self.pic0_raw = None
+            try:
+                self.pic0_raw = Image.open(self.gba_file[:-4] + '.pic0.png')
+                self.pic0 = self.icon0_raw
+            except:
+                True
             if not self.pic0 and 'pic0' in games[self.game_id]:
                 self.pic0_raw = get_pic0(games[self.game_id]['pic0'])
                 if self.pic0_raw:
@@ -225,6 +235,11 @@ class GBA2PSPApp:
             print('Fetching PIC1') if verbose else None
             self.pic1 = None
             self.pic1_raw = None
+            try:
+                self.pic1_raw = Image.open(self.gba_file[:-4] + '.pic1.png')
+                self.pic1 = self.icon0_raw
+            except:
+                True
             if not self.pic1 and 'pic1' in games[self.game_id]:
                 self.pic1_raw = get_pic1(games[self.game_id]['pic1'])
                 if self.pic1_raw:
@@ -239,20 +254,20 @@ class GBA2PSPApp:
         self.update_preview()
         
     def on_path_changed(self, event):
-        gba_file = event.widget.cget('path')
-        if not len(gba_file):
+        self.gba_file = event.widget.cget('path')
+        if not len(self.gba_file):
             return
 
         self.update_prefs()
 
         self.master.config(cursor='watch')
         self.master.update()
-        print('Processing', gba_file)  if verbose else None
+        print('Processing', self.gba_file)  if verbose else None
         disc = event.widget.cget('title')
         print('Disc', disc)  if verbose else None
 
         print('Scanning for Game ID') if verbose else None
-        self.game = read_game(gba_file)
+        self.game = read_game(self.gba_file)
         game_id = bytearray(self.game[0xa0:0xb0])
         for i in range(16):
             if game_id[i] == 0x00:
