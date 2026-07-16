@@ -200,7 +200,10 @@ class GBA2PSPApp:
                     self.icon0 = Image.open(io.BytesIO(self.icon0_raw))
             if self.icon0:
                 temp_files.append(self.subdir + 'ICON0.PNG')
-                self.icon0.resize((80,80), Image.Resampling.HAMMING).save(self.subdir + 'ICON0.PNG')
+                if self.icon0.size[0] / self.icon0.size[1] < 1.4 and self.icon0.size[0] / self.icon0.size[1] > 0.75:
+                    self.icon0.resize((80,80), Image.Resampling.HAMMING).save(self.subdir + 'ICON0.PNG')
+                else:
+                    self.icon0.resize((144,80), Image.Resampling.HAMMING).save(self.subdir + 'ICON0.PNG')
                 self.icon0_tk = tk.PhotoImage(file = self.subdir + 'ICON0.PNG')
                 c = self.builder.get_object('icon0_canvas', self.master)
                 c.create_image(0, 0, image=self.icon0_tk, anchor='nw')
@@ -333,7 +336,10 @@ class GBA2PSPApp:
             else:
                 Image.Image.paste(p1, p0, box=(148,79))
         if self.icon0:
-            i0 = self.icon0.resize((int(p1.size[1] * 0.25) , int(p1.size[1] * 0.25)), Image.Resampling.HAMMING)
+            if self.icon0.size[0] / self.icon0.size[1] < 1.4 and self.icon0.size[0] / self.icon0.size[1] > 0.75:
+                i0 = self.icon0.resize((int(p1.size[1] * 0.25) , int(p1.size[1] * 0.25)), Image.Resampling.HAMMING)
+            else:
+                i0 = self.icon0.resize((int(p1.size[1] * 0.45) , int(p1.size[1] * 0.25)), Image.Resampling.HAMMING)
             if has_transparency(i0):
                 Image.Image.paste(p1, i0, box=(36,81), mask=i0)
             else:

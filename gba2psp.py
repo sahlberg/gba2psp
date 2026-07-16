@@ -93,7 +93,10 @@ def get_icon0(f):
             icon0 = Image.open(f)
 
 
-        image = icon0.resize((80, 80), Image.Resampling.BILINEAR)
+        if icon0.size[0] / icon0.size[1] < 1.4 and icon0.size[0] / icon0.size[1] > 0.75:
+            icon0 = icon0.resize((80, 80), Image.Resampling.LANCZOS)
+        else:
+            icon0 = icon0.resize((144, 80), Image.Resampling.LANCZOS)
         i = io.BytesIO()
         image.save(i, format='PNG')
         i.seek(0)
