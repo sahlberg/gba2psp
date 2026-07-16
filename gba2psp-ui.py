@@ -190,8 +190,9 @@ class GBA2PSPApp:
             self.icon0 = None
             self.icon0_raw = None
             try:
-                self.icon0_raw = Image.open(self.gba_file[:-4] + '.icon0.png')
-                self.icon0 = self.icon0_raw
+                with open(self.gba_file[:-4] + '.icon0.png', 'rb') as f:
+                    self.icon0_raw = f.read()
+                self.icon0 = Image.open(io.BytesIO(self.icon0_raw))
             except:
                 True
             if not self.icon0 and 'icon0' in games[self.game_id]:
@@ -219,8 +220,9 @@ class GBA2PSPApp:
             self.pic0 = None
             self.pic0_raw = None
             try:
-                self.pic0_raw = Image.open(self.gba_file[:-4] + '.pic0.png')
-                self.pic0 = self.icon0_raw
+                with open(self.gba_file[:-4] + '.pic0.png', 'rb') as f:
+                    self.pic0_raw = f.read()
+                self.pic0 = Image.open(io.BytesIO(self.pic0_raw))
             except:
                 True
             if not self.pic0 and 'pic0' in games[self.game_id]:
@@ -239,8 +241,9 @@ class GBA2PSPApp:
             self.pic1 = None
             self.pic1_raw = None
             try:
-                self.pic1_raw = Image.open(self.gba_file[:-4] + '.pic1.png')
-                self.pic1 = self.icon0_raw
+                with open(self.gba_file[:-4] + '.pic1.png', 'rb') as f:
+                    self.pic1_raw = f.read()
+                self.pic1 = Image.open(io.BytesIO(self.pic1_raw))
             except:
                 True
             if not self.pic1 and 'pic1' in games[self.game_id]:
