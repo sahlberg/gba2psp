@@ -204,7 +204,7 @@ def get_icon0(f):
         else:
             icon0 = icon0.resize((144, 80), Image.Resampling.LANCZOS)
         i = io.BytesIO()
-        image.save(i, format='PNG')
+        icon0.save(i, format='PNG')
         i.seek(0)
         return i.read()
     except:

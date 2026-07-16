@@ -186,7 +186,7 @@ class GBA2PSPApp:
             return
 
         if update_icon0:
-            print('Fetching ICON0') if verbose else None
+            print('Fetching ICON0')
             self.icon0 = None
             self.icon0_raw = None
             try:
@@ -208,7 +208,7 @@ class GBA2PSPApp:
                 self.icon0_tk = tk.PhotoImage(file = self.subdir + 'ICON0.PNG')
                 c = self.builder.get_object('icon0_canvas', self.master)
                 c.create_image(0, 0, image=self.icon0_tk, anchor='nw')
- 
+
         if self.snd0_disabled == 'off':
             snd0 = None
             print('Fetching SND0') if verbose else None
