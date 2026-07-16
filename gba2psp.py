@@ -20,6 +20,112 @@ from pytubefix.contrib.search import Search
 from gamedb import games
 from riff import copy_riff, create_riff, parse_riff
 
+def ParseSFO(sfo_buf):
+    SFO_HEADER_SIZE = 0x14
+    INDEX_ENTRY_SIZE = 0x10
+
+    sfo = {}
+    sfo['magic'] = sfo_buf[0:4]
+    if sfo['magic'] != b'\x00PSF':
+        raise Exception('No SFO found')
+    sfo['version'] = struct.unpack_from('<I', sfo_buf, 4)[0]
+    sfo['key_table_start'] = struct.unpack_from('<I', sfo_buf, 8)[0]
+    sfo['data_table_start'] = struct.unpack_from('<I', sfo_buf, 12)[0]
+    sfo['table_entries'] = struct.unpack_from('<I', sfo_buf, 16)[0]
+    # read index table
+    sfo['parameters'] = {}
+    for i in range(sfo['table_entries']):
+        _pos = SFO_HEADER_SIZE + i * INDEX_ENTRY_SIZE
+        buf = sfo_buf[_pos:_pos + INDEX_ENTRY_SIZE]
+        idx = {}
+        idx['key_offset'] = struct.unpack_from('<H', buf, 0)[0]
+        idx['data_fmt'] = struct.unpack_from('<H', buf, 2)[0]
+        idx['data_len'] = struct.unpack_from('<I', buf, 4)[0]
+        idx['data_max_len'] = struct.unpack_from('<I', buf, 8)[0]
+        idx['data_offset'] = struct.unpack_from('<I', buf, 12)[0]
+        # read key name
+        _pos = sfo['key_table_start'] + idx['key_offset']
+        buf = sfo_buf[_pos:_pos + 64] # no keys longer than this
+        for o in range(len(buf)):
+            if buf[o] == 0:
+                break
+        name = buf[:o].decode('utf-8')
+        # read data and create a dict
+        data = {}
+        data['data_fmt'] = idx['data_fmt']
+        # read data
+        _pos = sfo['data_table_start'] + idx['data_offset']
+        buf = sfo_buf[_pos:_pos + idx['data_len']]
+        if data['data_fmt'] == 1028:
+            data['data'] = struct.unpack_from('<I', buf, 0)[0]
+        if idx['data_fmt'] == 516:
+            data['data_max_len'] = idx['data_max_len']
+            data['data'] = buf[:-1].decode('utf-8')
+        if idx['data_fmt'] == 4:
+            data['data_max_len'] = idx['data_max_len']
+            data['data'] = buf
+        sfo['parameters'][name] = data
+    return sfo
+
+
+def GenerateSFO(sfo):
+    #
+    # Generate keys table
+    #
+    keys = bytes(0)
+    for key in sfo:
+        keys = keys + bytes(key + '\0', encoding='utf8')
+    if len(keys) % 4:
+        keys = keys + bytes(4 - len(keys) % 4)
+            
+    #
+    # Generate data table
+    #
+    data = bytes(0)
+    for key in sfo:
+        e = sfo[key]
+        if e['data_fmt'] == 1028:
+            b = bytearray(4)
+            struct.pack_into('<I', b, 0, e['data'])
+            data = data + b
+            e['data_len'] = 4
+            e['data_max_len'] = 4
+        if e['data_fmt'] == 516 or e['data_fmt'] == 4:
+            e['data_len'] = len(e['data']) + 1
+            b = bytes(e['data'], encoding='utf-8')
+            if len(b) < e['data_max_len']:
+                b = b + bytes(e['data_max_len'] - len(b))
+                data = data + b
+     #
+    # generate index table
+    #
+    index = bytes(0)
+    key_offset = 0
+    data_offset = 0
+    for key in sfo:
+        e = sfo[key]
+        b = bytearray(16)
+        struct.pack_into('<H', b, 0, key_offset)
+        struct.pack_into('<H', b, 2, e['data_fmt'])
+        struct.pack_into('<I', b, 4, e['data_len'])
+        struct.pack_into('<I', b, 8, e['data_max_len'])
+        struct.pack_into('<I', b, 12, data_offset)
+        key_offset = key_offset + len(key) + 1
+        data_offset = data_offset + e['data_max_len']
+        
+        index = index + b
+     #
+    # generate header
+    #
+    hdr = bytearray(20)
+    hdr[0:4] = bytearray(b'\x00PSF')
+    struct.pack_into('<I', hdr, 4, 257)
+    struct.pack_into('<I', hdr, 8, len(index) + 20)
+    struct.pack_into('<I', hdr, 12, len(keys) + len(index) + 20)
+    struct.pack_into('<I', hdr, 16, len(sfo))
+    
+    return hdr + index + keys + data
+
 
 def read_eboot(f):
     def read_blob(f, eboot, i, name):
@@ -30,14 +136,14 @@ def read_eboot(f):
         if offsets[i] < offsets[i+1]:
             f.seek(offsets[i])
             eboot[name] = f.read(offsets[i+1] - offsets[i])
-    
+
     buf = f.read(0x28)
     eboot = {}
     eboot['magic'] = struct.unpack_from('<I', buf, 0)[0]
     if eboot['magic'] != 0x50425000:
         print('Not an EBOOT')
         return None
-    
+
     eboot['version'] = struct.unpack_from('<I', buf, 0x04)[0]
     offsets = struct.unpack_from('<IIIIIIII', buf, 0x08)
     read_blob(f, eboot, 0, 'param.sfo')
@@ -242,6 +348,12 @@ def create_eboot(game, game_id, icon0, pic0, pic1, snd0, outdir):
         eboot['pic1.png'] = pic1
     if snd0:
         eboot['snd0.at3'] = snd0
+
+    # Update the 'TITLE' in PARAM.SFO
+    _sfo = ParseSFO(eboot['param.sfo'])['parameters']
+    _sfo['TITLE']['data'] = games[game_id]['title']
+    eboot['param.sfo'] = GenerateSFO(_sfo)
+
 
     print('Writing', outdir + '/' + game_id + '/PBOOT.PBP')
     with open(outdir + '/' + game_id + '/PBOOT.PBP', 'wb') as f:
