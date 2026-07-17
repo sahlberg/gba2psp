@@ -9,11 +9,10 @@ import requests
 import shutil
 import struct
 import subprocess
-import sys
 import tempfile
 import zipfile
 
-from PIL import Image, ImageDraw, ImageFont
+from PIL import Image
 from pytubefix import YouTube
 from pytubefix.contrib.search import Search
 
@@ -318,15 +317,15 @@ def get_pic1(f):
         return None
     
 def read_game(game):
-    if game[-4:].lower() == '.zip':
-        z = zipfile.ZipFile(game)
-        for f in z.namelist():
-            if f[-4:].lower() == '.gba':
-                with z.open(f) as zf:
-                    return zf.read()
-        
-    with open(game, 'rb') as f:
-        return f.read()
+        if game[-4:].lower() == '.zip':
+            z = zipfile.ZipFile(game)
+            for f in z.namelist():
+                if f[-4:].lower() == '.gba':
+                    with z.open(f) as zf:
+                        return zf.read()
+            
+        with open(game, 'rb') as f:
+            return f.read()
 
 def create_eboot(game, game_id, icon0, pic0, pic1, snd0, outdir):
     if not outdir:
