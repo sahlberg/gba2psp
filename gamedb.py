@@ -147,10 +147,18 @@ games = {
     "ADVANCEWARS2AW2E": {
         'uttd': "AW2E",
         'title': "Advance Wars 2 - Black Hole Rising",
+        'icon0': 'https://images.launchbox-app.com//392b0ceb-a489-406d-86cc-d15ffac0cd12.jpg',
+        'pic0': 'https://images.launchbox-app.com/2af57b0d-cd6f-49df-b08d-978528d71552.png',
+        'pic1': 'https://images.launchbox-app.com/0b943a5b-2909-4780-b9d2-6c4afa3abc7a.jpg',
+        'snd0': 'https://www.youtube.com/watch?v=KIaX0no6PJk',
     },
     "ADVANCEWARS2AW2P": {
         'uttd': "AW2P",
         'title': "Advance Wars 2 - Black Hole Rising",
+        'icon0': 'https://images.launchbox-app.com//37f2dd26-1be5-4b01-a31d-8d3c9098b208.jpg',
+        'pic0': 'https://images.launchbox-app.com/2af57b0d-cd6f-49df-b08d-978528d71552.png',
+        'pic1': 'https://images.launchbox-app.com/0b943a5b-2909-4780-b9d2-6c4afa3abc7a.jpg',
+        'snd0': 'https://www.youtube.com/watch?v=KIaX0no6PJk',
     },
     "ADVANCEWARS AWRE": {
         'uttd': "AWRE",
@@ -246,6 +254,9 @@ games = {
     "AGB-P-BSMJ  BSMJ": {
         'uttd': "BSMJ",
         'title': "Metal Slug Advance",
+        'icon0': 'https://images.launchbox-app.com//6ce0357d-f62c-482f-9e22-c36637b3e318.jpg',
+        'pic0': 'https://images.launchbox-app.com/e9a2f52c-25b4-4184-8ef0-0e3785d4d1ce.png',
+        'pic1': 'https://images.launchbox-app.com/158d45de-507b-4124-9917-a4c90d6cca91.jpg',
     },
     "AGB-TORNEKO3BD3J": {
         'uttd': "BD3J",
@@ -2462,14 +2473,23 @@ games = {
     "DRACULA AGB1AAME": {
         'uttd': "AAME",
         'title': "Castlevania - Circle of the Moon",
+        'icon0': 'https://images.launchbox-app.com//6d52b76a-53d2-4d3c-90b8-a1d92ca2833f.jpg',
+        'pic0': 'https://gamesdb-images.launchbox.gg/r2_95764cab-079d-4e37-8a81-d9ecb8ca8b5d.png',
+        'pic1': 'https://images.launchbox-app.com//0a6c16ef-b5d0-4d56-b0c2-e5548e1afbd4.jpg',
     },
     "DRACULA AGB1AAMJ": {
         'uttd': "AAMJ",
         'title': "Akumajou Dracula - Circle of the Moon",
+        'icon0': 'https://images.launchbox-app.com//12742094-af53-4710-9c15-4c062c049093.jpg',
+        'pic0': 'https://gamesdb-images.launchbox.gg/r2_73aa4bad-e646-4e6b-8f73-a1588c676371.png',
+        'pic1': 'https://images.launchbox-app.com//0a6c16ef-b5d0-4d56-b0c2-e5548e1afbd4.jpg',
     },
     "DRACULA AGB1AAMP": {
         'uttd': "AAMP",
         'title': "Castlevania - Circle of the Moon",
+        'icon0': 'https://images.launchbox-app.com//8102568e-f47e-4d5e-a830-f4360db19fbb.jpg',
+        'pic0': 'https://gamesdb-images.launchbox.gg/r2_95764cab-079d-4e37-8a81-d9ecb8ca8b5d.png',
+        'pic1': 'https://images.launchbox-app.com//0a6c16ef-b5d0-4d56-b0c2-e5548e1afbd4.jpg',
     },
     "DRAGONBALL01MDBE": {
         'uttd': "MDBE",
@@ -5204,6 +5224,9 @@ games = {
     "LINK        FLBJ": {
         'uttd': "FLBJ",
         'title': "Famicom Mini Vol. 25 - The Legend of Zelda 2 - Link no Bouken",
+        'icon0': 'https://images.launchbox-app.com//2d43c92d-b18b-4452-a8d7-971371e3eba4.png',
+        'pic0': 'https://images.launchbox-app.com//f0f121a5-7136-4ea3-9de2-3e57ebd5409b.png',
+        'pic1': 'https://images.launchbox-app.com//3d0b8477-ac4a-4fa4-943a-708aff36eb28.jpg',
     },
     "LIONKING 1.5BLKE": {
         'uttd': "BLKE",
@@ -5392,6 +5415,10 @@ games = {
     "MADEINWARIO AZWJ": {
         'uttd': "AZWJ",
         'title': "Made in Wario",
+        'icon0': 'https://images.launchbox-app.com//3bab15f0-ba96-4338-8e69-c18bbf363566.jpg',
+        'pic0': None,
+        'pic1': 'https://images.launchbox-app.com/85dc2462-9b5b-481f-894c-2ddc4266f2ac.jpg',
+        'snd0': 'https://www.youtube.com/watch?v=G4EQLdH4UVc&list=PLjyLjyXJQJUPePFzsfvc-AtVPLUJ1qsrv&index=1',
     },
     "MAGICAL VACAAMVJ": {
         'uttd': "AMVJ",
@@ -5596,6 +5623,8 @@ games = {
     "MAWARUWARIO RZWJ": {
         'uttd': "RZWJ",
         'title': "Mawaru - Made in Wario",
+        'icon0': 'https://images.launchbox-app.com//6880d0d7-c211-4796-9943-6517f8602182.jpg',
+        'pic1': 'https://images.launchbox-app.com//708b775a-2580-4f5e-8d87-f833273aa212.jpg',
     },
     "MAX2BLUEADV AMHE": {
         'uttd': "AMHE",
