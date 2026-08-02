@@ -166,7 +166,7 @@ games = {
         'icon0': 'https://images.launchbox-app.com/0d283a33-c5f3-429d-a1f1-3d6aa6a33553.jpg',
         'pic0': 'https://images.launchbox-app.com/73022111-ee1f-42ce-a7fe-471e55b2e010.png',
         'pic1': 'https://images.launchbox-app.com/4a4c39c1-9048-4570-ba6f-3079954f3a9c.jpg',
-        'snd0': 'https://www.youtube.com/watch?v=Uhw3n1p-Tlk&list=PLph1rKwgi-5gfdUX6DWt3PCyk982DFzuL&index=1',
+        'snd0': 'https://www.youtube.com/watch?v=JNtZTYcSOGE&list=RDJNtZTYcSOGE&start_radio=1',
     },
     "ADVANCEWARSPAWRP": {
         'uttd': "AWRP",
@@ -210,6 +210,10 @@ games = {
     "AGB KIRBY AMB8KE": {
         'uttd': "B8KE",
         'title': "Kirby & The Amazing Mirror",
+        'icon0': 'https://images.launchbox-app.com//be74f444-a8c9-4235-8a6c-3dcec35b7201.jpg',
+        'pic0': 'https://images.launchbox-app.com//e771c5b5-0857-41ec-bcf0-37562c5960f3.png',
+        'pic1': 'https://gamesdb-images.launchbox.gg/r2_44cba434-412d-4e26-aa10-936696930bed.jpg',
+        'snd0': 'https://www.youtube.com/watch?v=ygPCHnykUjY',
     },
     "AGB KIRBY AMB8KJ": {
         'uttd': "B8KJ",
@@ -222,6 +226,10 @@ games = {
     "AGB KIRBY DXA7KE": {
         'uttd': "A7KE",
         'title': "Kirby - Nightmare in Dream Land",
+        'icon0': 'https://images.launchbox-app.com//496a0bd1-660f-4719-be75-28ee2e142bcd.jpg',
+        'pic0': 'https://gamesdb-images.launchbox.gg/r2_3839e965-1102-468c-8da9-5c6e13f04e71.png',
+        'pic1': 'https://gamesdb-images.launchbox.gg/r2_55fc5a8e-f229-4cf8-9a36-c364b62b59b6.jpg',
+        'snd0': 'https://www.youtube.com/watch?v=RqojmitIHco',
     },
     "AGB KIRBY DXA7KJ": {
         'uttd': "A7KJ",
@@ -257,6 +265,7 @@ games = {
         'icon0': 'https://images.launchbox-app.com//6ce0357d-f62c-482f-9e22-c36637b3e318.jpg',
         'pic0': 'https://images.launchbox-app.com/e9a2f52c-25b4-4184-8ef0-0e3785d4d1ce.png',
         'pic1': 'https://images.launchbox-app.com/158d45de-507b-4124-9917-a4c90d6cca91.jpg',
+        'snd0': 'https://www.youtube.com/watch?v=mrfyD9InuEA&list=RDmrfyD9InuEA&start_radio=1',
     },
     "AGB-TORNEKO3BD3J": {
         'uttd': "BD3J",
@@ -488,7 +497,7 @@ games = {
         'icon0': 'https://images.launchbox-app.com/8dc7dee2-3ac0-4905-a362-f269f3079846.jpg',
         'pic0': 'https://images.launchbox-app.com/d9090e02-4373-40cc-a4d2-bf67e113b91a.png',
         'pic1': 'https://images.launchbox-app.com/7516f500-4e6c-4d92-801d-7feb8dcab322.jpg',
-        'snd0': 'https://www.youtube.com/watch?v=W63cvvBFbOI&list=PL8C60229988A2CB28&index=1',
+        'snd0': 'https://www.youtube.com/watch?v=W63cvvBFbOI',
     },
     "ASTROBOY    BTAJ": {
         'uttd': "BTAJ",
@@ -1388,6 +1397,7 @@ games = {
         'icon0': 'https://images.launchbox-app.com//bcf2229c-b88b-4b8e-afe0-49b98ed7f4aa.jpg',
         'pic0': 'https://gamesdb-images.launchbox.gg/r2_5341d728-6bd0-4a6c-9bcf-c55a4c4fae67.png',
         'pic1': 'https://images.launchbox-app.com//c3ac66b7-a12e-4449-a171-db160fc31485.jpg',
+        'snd0': 'https://www.youtube.com/watch?v=QguTSTTH2po&list=PL713F890B7C7018C0&index=3',
     },
     "CASTLEVANIA1ACHJ": {
         'uttd': "ACHJ",
@@ -1409,7 +1419,7 @@ games = {
         'icon0': 'https://images.launchbox-app.com/23588e39-184c-4b82-8c7a-5c46d1868013.jpg',
         'pic0': 'https://images.launchbox-app.com/9e11fc8f-6df7-4ceb-ac9d-f09c20ffca98.png',
         'pic1': 'https://images.launchbox-app.com/434d0e00-59c9-405f-9c85-ae8fb2f1bb07.jpg',
-        'snd0': 'https://www.youtube.com/watch?v=IlVOomZcv0Q&list=PL6E9hVlff2TGFs9fVmsNIeuSpciQ9eKgi&index=1',
+        'snd0': 'https://www.youtube.com/watch?v=IlVOomZcv0Q',
     },
     "CASTLEVANIA2A2CJ": {
         'uttd': "A2CJ",
@@ -1695,8 +1705,9 @@ games = {
         'uttd': "AC8E",
         'title': "Crash Bandicoot 2 - N-Tranced",
         'icon0': 'https://images.launchbox-app.com/5ab5e584-1aa4-4de5-a28c-625247156590.jpg',
+        'pic0': 'https://images.launchbox-app.com//b8b4bd4d-3fdd-4c58-a73e-d6ccf2035be4.png',
         'pic1': 'https://images.launchbox-app.com/bf3c3253-21ca-41b1-858f-6cfc0faea960.jpg',
-        'snd0': 'https://www.youtube.com/watch?v=Sqr8lq79jsU&list=PL4sZJNxKabvlY-Fp3ozv7S290bbvvLNQD&index=1',
+        'snd0': 'https://www.youtube.com/watch?v=Sqr8lq79jsU',
     },
     "CRASH2      AC8J": {
         'uttd': "AC8J",
@@ -1709,6 +1720,10 @@ games = {
     "CRASH       ACQE": {
         'uttd': "ACQE",
         'title': "Crash Bandicoot - The Huge Adventure",
+        'icon0': 'https://images.launchbox-app.com//f53de6d4-f193-49bb-b824-14cdca4fda73.jpg',
+        'pic0': 'https://images.launchbox-app.com//90efeb54-b968-4a94-b038-1bd1f81b17e9.png',
+        'pic1': 'https://static.wikia.nocookie.net/crashban/images/6/68/Crash-Bandicoot-The-Wrath-of-Cortex-958-9.jpg/revision/latest/scale-to-width-down/1000?cb=20110618204108',
+        'snd0': 'https://www.youtube.com/watch?v=rYTyuShPfyU',
     },
     "CRASH       ACQP": {
         'uttd': "ACQP",
@@ -1721,6 +1736,10 @@ games = {
     "CRASH PURPLEBD4E": {
         'uttd': "BD4E",
         'title': "Crash Bandicoot Purple - Ripto's Rampage",
+        'icon0': 'https://images.launchbox-app.com//6317e4fe-4d83-4ff8-bb0e-7f1f9cd6bd22.jpg',
+        'pic0': 'https://images.launchbox-app.com//c80c6531-0744-4eb4-b06a-e853abc92b14.png',
+        'pic1': 'https://gamesdb-images.launchbox.gg/r2_656bc350-5e60-43f0-ae16-47ddfaea5ef6.jpg',
+        'snd0': 'https://www.youtube.com/watch?v=VlToyK3mnK8',
     },
     "CRASH PURPLEBD4P": {
         'uttd': "BD4P",
@@ -3554,6 +3573,7 @@ games = {
         'icon0': 'https://images.launchbox-app.com//1600a9d8-0b1b-403a-ab62-ab1d7813d4d6.jpg',
         'pic0': 'https://images.launchbox-app.com//d90bce59-515b-4a55-8632-892a2dd34c03.png',
         'pic1': 'https://images.launchbox-app.com//b74af433-e658-4749-af21-34f82eae5e4a.jpg',
+        'snd0': 'https://www.youtube.com/watch?v=lzwYZ9FiOG4',
     },
     "GBAZELDA    AZLJ": {
         'uttd': "AZLJ",
@@ -3575,7 +3595,7 @@ games = {
         'icon0': 'https://images.launchbox-app.com/0fe2ca8b-4307-4913-a1b2-46720c1a82d1.jpg',
         'pic0': 'https://images.launchbox-app.com/f5d37c8b-60cc-45c1-b459-27055dbe98e7.png',
         'pic1': 'https://images.launchbox-app.com/4827e856-0ee9-46df-81fe-d83f72225588.jpg',
-        'snd0': 'https://www.youtube.com/watch?v=B7T9t5Swu0c&list=PL66C3A99730C3F3F2&index=1',
+        'snd0': 'https://www.youtube.com/watch?v=qmKMIxhVXXA',
     },
     "GBAZELDA MC BZMJ": {
         'uttd': "BZMJ",
@@ -5526,7 +5546,7 @@ games = {
         'icon0': 'https://images.launchbox-app.com/faaa1b52-35d1-4881-85af-1440b0d05721.jpg',
         'pic0': 'https://images.launchbox-app.com/8ec6f272-8882-4fae-9958-7b008b99bb11.png',
         'pic1': 'https://images.launchbox-app.com/750b024b-d5d6-4d73-9b11-14035f70846a.jpg',
-        'snd0': 'https://www.youtube.com/watch?v=k29shcWBc8E&list=PL27933B09777F55C7&index=1',
+        'snd0': 'https://www.youtube.com/watch?v=k29shcWBc8E',
     },
     "MARIO KART  AMKJ": {
         'uttd': "AMKJ",
@@ -5566,7 +5586,7 @@ games = {
         'icon0': 'https://images.launchbox-app.com/70592a60-f531-4473-ad4c-1a2d032a786c.jpg',
         'pic0': 'https://images.launchbox-app.com/7976c4d6-30d5-4b18-b0b5-6209d844cecb.png',
         'pic1': 'https://images.launchbox-app.com/573d6a31-78f6-479a-96c8-8706364e66b9.jpg',
-        'snd0': 'https://www.youtube.com/watch?v=8twTNeB6Hgo&list=PLXQMeRR5llU-_b1wHNCo5w2Lbszy9B6dO&index=1',
+        'snd0': 'https://www.youtube.com/watch?v=8twTNeB6Hgo',
     },
     "MARIOPARTYEUB8MP": {
         'uttd': "B8MP",
@@ -5912,6 +5932,7 @@ games = {
         'icon0': 'https://images.launchbox-app.com/5211fca7-d0dc-4c53-9dda-f2fd7a5309f6.jpg',
         'pic0': 'https://images.launchbox-app.com/e9a2f52c-25b4-4184-8ef0-0e3785d4d1ce.png',
         'pic1': 'https://images.launchbox-app.com/158d45de-507b-4124-9917-a4c90d6cca91.jpg',
+        'snd0': 'https://www.youtube.com/watch?v=mrfyD9InuEA',
     },
     "METFUSIONCHNAMTC": {
         'uttd': "AMTC",
@@ -5939,7 +5960,7 @@ games = {
         'icon0': 'https://images.launchbox-app.com//5454ef86-d7e1-415c-b5bd-1464c6c2d78f.jpg',
         'pic0': 'https://images.launchbox-app.com/86d2ae66-c545-425d-9145-d72e3bba4d6f.png',
         'pic1': 'https://images.launchbox-app.com/6e710e66-3704-409d-ba78-6e78b4b0bcb5.jpg',
-        'snd0': 'https://www.youtube.com/watch?v=L-TE2h_XB4w&list=PL71442F24C8795CD7&index=1',
+        'snd0': 'https://www.youtube.com/watch?v=L-TE2h_XB4w',
     },
     "MEZA_KOUSIENBMKJ": {
         'uttd': "BMKJ",
@@ -6272,6 +6293,10 @@ games = {
     "MOTHER3     A3UJ": {
         'uttd': "A3UJ",
         'title': "Mother 3",
+        'icon0': 'https://images.launchbox-app.com//12ff9558-8030-41d1-b093-4faaf744f8d1.jpg',
+        'pic0': 'https://images.launchbox-app.com//8ca50f4a-ce33-4033-ba91-2f45cdd57cc0.png',
+        'pic1': 'https://gamesdb-images.launchbox.gg/r2_7e365211-befe-466b-bc4b-10d611ee85f2.png',
+        'snd0': 'https://www.youtube.com/watch?v=RotNK_emibc',
     },
     "MOTOGP      AM4E": {
         'uttd': "AM4E",
@@ -6684,6 +6709,10 @@ games = {
     "NITRO KART  BCNE": {
         'uttd': "BCNE",
         'title': "Crash Nitro Kart",
+        'icon0': 'https://images.launchbox-app.com//a8215174-19d7-4bab-8e40-f88c55f5cef1.jpg',
+        'pic0': 'https://gamesdb-images.launchbox.gg/r2_164f275b-20d9-4448-8647-ce074a3de288.png',
+        'pic1': 'https://images.launchbox-app.com//412123dd-79bc-4af7-8cae-2db7d657dbce.jpg',
+        'snd0': 'https://www.youtube.com/watch?v=t3X-UDqW6hI',
     },
     "NITRO KART  BCNJ": {
         'uttd': "BCNJ",
@@ -7323,7 +7352,7 @@ games = {
         'icon0': 'https://images.launchbox-app.com/76544f7b-a881-4a4a-83ec-721b9bdef3c1.jpg',
         'pic0': 'https://images.launchbox-app.com/d7ede79c-0ad1-4ffc-bc0f-20008d86d16f.png',
         'pic1': 'https://images.launchbox-app.com/ea68934a-f38d-49be-b8d3-b4f10304a927.jpg',
-        'snd0': 'https://www.youtube.com/watch?v=yNJ66qzmDks&list=PL22604C8CC8FCB417&index=1',
+        'snd0': 'https://www.youtube.com/watch?v=yNJ66qzmDks',
     },
     "POKEMON EMERBPEF": {
         'uttd': "BPEF",
@@ -7371,7 +7400,7 @@ games = {
         'icon0': 'https://images.launchbox-app.com//2198e0db-77df-4104-a30d-627e5683dd3e.jpg',
         'pic0': 'https://images.launchbox-app.com//6cd46a01-b6db-4e0f-bc04-81981af6a631.png',
         'pic1': 'https://images.launchbox-app.com//3ec8f9b3-6d04-4c38-97c0-5f0ecbbde7a8.jpg',
-        'snd0': 'https://www.youtube.com/watch?v=dfRLeXXsdnM&list=PL61BCBEA83232A814&index=1',
+        'snd0': 'https://www.youtube.com/watch?v=dfRLeXXsdnM',
     },
     "POKEMON FIREBPRF": {
         'uttd': "BPRF",
@@ -7400,6 +7429,10 @@ games = {
     "POKEMON LEAFBPGE": {
         'uttd': "BPGE",
         'title': "Pokemon - Leaf Green Version",
+        'icon0': 'https://images.launchbox-app.com//eae41cfd-4297-494b-bb2b-20daa982bfae.jpg',
+        'pic0': 'https://images.launchbox-app.com//1b5e82db-b49a-4860-911b-b4029e0ecebd.png',
+        'pic1': 'https://images.launchbox-app.com//e302774f-ea49-479b-bccb-2014bb1b136f.jpg',
+        'snd0': 'https://www.youtube.com/watch?v=eNK6f_-Qzzs',
     },
     "POKEMON LEAFBPGF": {
         'uttd': "BPGF",
@@ -7431,7 +7464,7 @@ games = {
         'icon0': 'https://images.launchbox-app.com/c10d1bcb-3446-448b-8cf5-4b1df49eb394.png',
         'pic0': 'https://images.launchbox-app.com/06551353-2456-4601-a9ad-23e927abe628.png',
         'pic1': 'https://images.launchbox-app.com/1d82df1e-481a-4163-ba5f-41356d4895b5.jpg',
-        'snd0': 'https://www.youtube.com/watch?v=C9rEeGWK0pQ&list=PLEiOTsktKIotvaMzRhqvCsT7PHbm67nsq&index=1',
+        'snd0': 'https://www.youtube.com/watch?v=eA0sgv281Bg',
     },
     "POKEMON RUBYAXVF": {
         'uttd': "AXVF",
@@ -7472,6 +7505,10 @@ games = {
     "POKEMON SAPPAXPE": {
         'uttd': "AXPE",
         'title': "Pokemon - Sapphire Version",
+        'icon0': 'https://images.launchbox-app.com//b7238142-02f4-4e21-b521-102a7a7b3c50.jpg',
+        'pic0': 'https://images.launchbox-app.com//736d9f1d-7484-448a-b862-f8121bc58d2c.png',
+        'pic1': 'https://images.launchbox-app.com//57e1e1ad-1ae3-4fec-ab23-819ed032d3dd.jpg',
+        'snd0': 'https://www.youtube.com/watch?v=qS_id-npavk',
     },
     "POKEMON SAPPAXPF": {
         'uttd': "AXPF",
@@ -7816,6 +7853,10 @@ games = {
     "RAREDKC1    A5NE": {
         'uttd': "A5NE",
         'title': "Donkey Kong Country",
+        'icon0': 'https://images.launchbox-app.com//327ebff3-f786-4340-90a6-6bd05d1eb461.jpg',
+        'pic0': 'https://images.launchbox-app.com//9c21deab-a96a-478b-a8f0-3b7a444ddf12.png',
+        'pic1': 'https://images.launchbox-app.com//5a3e9ba6-bafb-4b4e-a2ec-8638f21197d6.jpg',
+        'snd0': 'https://www.youtube.com/watch?v=B6-Tqc8S1hg',
     },
     "RAREDKC1    A5NJ": {
         'uttd': "A5NJ",
@@ -7828,6 +7869,10 @@ games = {
     "RAREDKC2    B2DE": {
         'uttd': "B2DE",
         'title': "Donkey Kong Country 2",
+        'icon0': 'https://images.launchbox-app.com//6d38facf-fc72-4041-810d-36540dc1ecca.jpg',
+        'pic0': 'https://images.launchbox-app.com//e166561d-7d08-46c8-b2d3-cf4fcd1a9a2c.png',
+        'pic1': 'https://images.launchbox-app.com//a76d71da-4b03-4458-afeb-92faf565cc26.jpg',
+        'snd0': 'https://www.youtube.com/watch?v=NQSS12JcwcE',
     },
     "RAREDKC2    B2DJ": {
         'uttd': "B2DJ",
@@ -7836,6 +7881,10 @@ games = {
     "RAREDKC3    BDQE": {
         'uttd': "BDQE",
         'title': "Donkey Kong Country 3",
+        'icon0': 'https://images.launchbox-app.com//0ccbfcd5-7154-4148-80a3-4bc60764615c.jpg',
+        'pic0': 'https://images.launchbox-app.com//1716a60b-6039-411f-bfcd-a48bb512c3a2.png',
+        'pic1': 'https://images.launchbox-app.com//9d3675c7-2c5a-4bd2-aed2-fb32fa6a34f1.jpg',
+        'snd0': 'https://www.youtube.com/watch?v=ZE3kkmovWSA',
     },
     "RAREDKC3    BDQJ": {
         'uttd': "BDQJ",
@@ -8880,6 +8929,10 @@ games = {
     "SONICADVANC2A2NE": {
         'uttd': "A2NE",
         'title': "Sonic Advance 2",
+        'icon0': 'https://images.launchbox-app.com//f37ded5f-6a1a-4ec1-a401-2fb1c897b2e8.jpg',
+        'pic0': 'https://images.launchbox-app.com//927fea2e-6af0-421e-93da-c82d2d34e4ea.png',
+        'pic1': 'https://gamesdb-images.launchbox.gg/r2_7b04c3ef-a2a2-4e14-a229-48eb10f02682.jpg',
+        'snd0': 'https://www.youtube.com/watch?v=-aosh6qt6H8',
     },
     "SONICADVANC2A2NJ": {
         'uttd': "A2NJ",
@@ -8888,6 +8941,10 @@ games = {
     "SONICADVANC3B3SE": {
         'uttd': "B3SE",
         'title': "Sonic Advance 3",
+        'icon0': 'https://images.launchbox-app.com/12227222-4471-4ab2-81e4-3617dec1baa9.jpg',
+        'pic0': 'https://images.launchbox-app.com/ebf8d575-8500-44cc-b2d5-e2531a2cb17a.png',
+        'pic1': 'https://images.launchbox-app.com/r2_ed441796-558a-474c-8599-0325c60267d7.jpg',
+        'snd0': 'https://www.youtube.com/watch?v=LkXJ288IVm4',
     },
     "SONICADVANC3B3SJ": {
         'uttd': "B3SJ",
@@ -8908,6 +8965,10 @@ games = {
     "SONICADVANCEASOE": {
         'uttd': "ASOE",
         'title': "Sonic Advance",
+        'icon0': 'https://images.launchbox-app.com//f8fbf849-390d-4439-b478-19d9ed704f78.jpg',
+        'pic0': 'https://gamesdb-images.launchbox.gg/r2_b781e6f1-62ad-4803-bcd6-1d451f3fee09.png',
+        'pic1': 'https://gamesdb-images.launchbox.gg/r2_1294b80c-e97c-41b5-b63e-efa2f1b7ea41.jpg',
+        'snd0': 'https://www.youtube.com/watch?v=D_522kD4Dvc',
     },
     "SONICADVANCEASOJ": {
         'uttd': "ASOJ",
@@ -9156,6 +9217,10 @@ games = {
     "SPYRO 2     A2SE": {
         'uttd': "A2SE",
         'title': "Spyro 2 - Season of Flame",
+        'icon0': 'https://images.launchbox-app.com//c40b8b8b-bac7-45d0-b18d-42b74fb3bbd1.jpg',
+        'pic0': 'https://gamesdb-images.launchbox.gg/r2_3fd7ddaf-469e-4bc5-b185-a9cb1f768b93.png',
+        'pic1': 'https://gamesdb-images.launchbox.gg/r2_c1c86e0f-be56-47d2-8601-712b44f9d98d.jpg',
+        'snd0': 'https://www.youtube.com/watch?v=1AZ45m3EzlQ',
     },
     "SPYRO 2     A2SP": {
         'uttd': "A2SP",
@@ -9164,6 +9229,10 @@ games = {
     "SPYRO 3     AOWE": {
         'uttd': "AOWE",
         'title': "Spyro - Attack of the Rhynocs",
+        'icon0': 'https://images.launchbox-app.com//543f12f4-65ab-43c5-a803-4291075fed97.jpg',
+        'pic0': 'https://gamesdb-images.launchbox.gg/r2_0b0d7b62-57e7-4b1e-b204-8977b3317d56.png',
+        'pic1': 'https://gamesdb-images.launchbox.gg/r2_3e76f601-640e-4ec6-bb42-c6eeddf06e45.jpg',
+        'snd0': 'https://www.youtube.com/watch?v=YGBv20koEMg',
     },
     "SPYRO 3     AOWP": {
         'uttd': "AOWP",
@@ -9176,6 +9245,10 @@ games = {
     "SPYRO       ASYE": {
         'uttd': "ASYE",
         'title': "Spyro - Season of Ice",
+        'icon0': 'https://images.launchbox-app.com//8c1726b7-d4f7-4623-88ac-986bf3ffab4f.jpg',
+        'pic0': 'https://gamesdb-images.launchbox.gg/r2_fd46449f-7aed-4bef-8f8e-eddeccac52ce.png',
+        'pic1': 'https://gamesdb-images.launchbox.gg/r2_bc5559ef-dc0d-45a1-b263-c311530e0922.jpg',
+        'snd0': 'https://www.youtube.com/watch?v=n-MMGvaTz3g',
     },
     "SPYRO       ASYP": {
         'uttd': "ASYP",
@@ -9188,6 +9261,10 @@ games = {
     "SPYRO ORANGEBSTE": {
         'uttd': "BSTE",
         'title': "Spyro Orange - The Cortex Conspiracy",
+        'icon0': 'https://images.launchbox-app.com//c269781b-7f05-467b-9fe4-58238fdfd8ce.jpg',
+        'pic0': 'https://gamesdb-images.launchbox.gg/r2_c11b630e-461a-4ac5-91b4-fc9d95a5e1ff.png',
+        'pic1': 'https://images.launchbox-app.com//5a5c29d9-344e-4fe3-bf24-1ec9f6dcf959.png',
+        'snd0': 'https://www.youtube.com/watch?v=YJEjFasGsMk',
     },
     "SPYRO ORANGEBSTP": {
         'uttd': "BSTP",
@@ -9468,6 +9545,10 @@ games = {
     "SUPER MARIOAAMAE": {
         'uttd': "AMAE",
         'title': "Super Mario Advance",
+        'icon0': 'https://images.launchbox-app.com//b5f1f4c4-6863-4ae3-8776-62ef6af6a2e6.png',
+        'pic0': 'https://gamesdb-images.launchbox.gg/r2_68ab6c76-6a39-4bf3-9ce2-54d944cdc59e.png',
+        'pic1': 'https://images.launchbox-app.com//272b90a1-4bda-47d1-8ed2-813b21ca335b.jpg',
+        'snd0': 'https://www.youtube.com/watch?v=Bq_85Q3ARaQ',
     },
     "SUPER MARIOAAMAJ": {
         'uttd': "AMAJ",
@@ -9484,6 +9565,10 @@ games = {
     "SUPER MARIOBAA2E": {
         'uttd': "AA2E",
         'title': "Super Mario Advance 2 - Super Mario World",
+        'icon0': 'https://gamesdb-images.launchbox.gg/r2_0d1560aa-520a-4e8f-b591-3733a15768ec.jpg',
+        'pic0': 'https://images.launchbox-app.com//6afa4480-e300-4bdc-8fae-4382bc5d0a98.png',
+        'pic1': 'https://gamesdb-images.launchbox.gg/r2_e4d44cab-9ef0-4dbe-b7e9-638cd1c86905.jpg',
+        'snd0': 'https://www.youtube.com/watch?v=x8kSkzqBzrI&list=PLhPt7n-ALrSAjphGS55NnXCzmN6VjX1IW',
     },
     "SUPER MARIOBAA2J": {
         'uttd': "AA2J",
@@ -9500,6 +9585,10 @@ games = {
     "SUPER MARIOCA3AE": {
         'uttd': "A3AE",
         'title': "Super Mario Advance 3 - Yoshi's Island",
+        'icon0': 'https://images.launchbox-app.com//caa2cf41-b5db-4268-9c6c-6cc88ed3cb72.jpg',
+        'pic0': 'https://images.launchbox-app.com//f7aab52f-edeb-4df2-b287-cad8af94ddae.png',
+        'pic1': 'https://images.launchbox-app.com//fe37a2a2-e9aa-44f4-8c97-64483ef1e3cf.jpg',
+        'snd0': 'https://www.youtube.com/watch?v=zFWmd7E9ZqY',
     },
     "SUPER MARIOCA3AJ": {
         'uttd': "A3AJ",
@@ -9512,6 +9601,10 @@ games = {
     "SUPER MARIODAX4E": {
         'uttd': "AX4E",
         'title': "Super Mario Advance 4 - Super Mario Bros. 3",
+        'icon0': 'https://images.launchbox-app.com//50bce781-c65c-479a-8a24-6d78ea49a6be.jpg',
+        'pic0': 'https://images.launchbox-app.com//3853f5cd-d292-4836-87db-5ddfc4fa1065.png',
+        'pic1': 'https://images.launchbox-app.com//2488549e-f527-4d08-b6b6-5d9904e32684.jpg',
+        'snd0': 'https://www.youtube.com/watch?v=ciIV9VSa5VM',
     },
     "SUPER MARIODAX4J": {
         'uttd': "AX4J",
@@ -9992,6 +10085,10 @@ games = {
     "TMNT GBA 2  BT2E": {
         'uttd': "BT2E",
         'title': "Teenage Mutant Ninja Turtles 2 - Battle Nexus",
+        'icon0': 'https://images.launchbox-app.com//c92ec91c-30fe-4907-b8f9-34cc90a85f99.png',
+        'pic0': 'https://images.launchbox-app.com//aa4aadef-0594-4204-b1b2-aa511b56a77e.png',
+        'pic1': 'https://gamesdb-images.launchbox.gg/r2_51028616-6236-472c-9e6a-7e77378f2643.jpg',
+        'snd0': 'https://www.youtube.com/watch?v=f2n57jvTGMM',
     },
     "TMNT GBA 2  BT2P": {
         'uttd': "BT2P",
@@ -10000,6 +10097,10 @@ games = {
     "TMNT GBA    BNTE": {
         'uttd': "BNTE",
         'title': "Teenage Mutant Ninja Turtles",
+        'icon0': 'https://images.launchbox-app.com//8cf61229-95d8-4177-b9fc-92fb1b60ae4e.jpg',
+        'pic0': 'https://gamesdb-images.launchbox.gg/r2_51a54e87-4d8e-4f92-96c3-038ec1279ad3.png',
+        'pic1': 'https://images.launchbox-app.com//9bf2ca52-dd0f-4fa4-a0c2-7c5938b8c4dd.jpg',
+        'snd0': 'https://www.youtube.com/watch?v=tx5S5UEqZh0',
     },
     "TMNT GBA    BNTP": {
         'uttd': "BNTP",
@@ -10540,6 +10641,10 @@ games = {
     "WARIOLANDE  AWAE": {
         'uttd': "AWAE",
         'title': "Wario Land 4",
+        'icon0': 'https://images.launchbox-app.com//7b6300c1-a7f7-438f-89b8-943f08ecaee2.jpg',
+        'pic0': 'https://gamesdb-images.launchbox.gg/r2_78946567-09f2-43cc-a199-6ae009eadd76.png',
+        'pic1': 'https://images.launchbox-app.com//1462480a-c305-47fa-a1f1-8ebe9b1c8b6f.jpg',
+        'snd0': 'https://www.youtube.com/watch?v=jocrNBs09Ao',
     },
     "WARIOTWISTEDRZWE": {
         'uttd': "RZWE",
@@ -11059,7 +11164,7 @@ games = {
         'icon0': 'https://images.launchbox-app.com/a2331b18-0475-4f67-bb6a-9f928fe62474.jpg',
         'pic0': 'https://images.launchbox-app.com/9fd48d9e-d7f4-41e9-9019-1a78d014020a.png',
         'pic1': 'https://images.launchbox-app.com/d64b324c-7512-4a6a-b84c-3c577f5015fb.jpg',
-        'snd0': 'https://www.youtube.com/watch?v=9sC4wlz4zrY&list=PLA4B22C847C11C106&index=1',
+        'snd0': 'https://www.youtube.com/watch?v=9sC4wlz4zrY',
     },
     "ZEROMISSIONJBMXJ": {
         'uttd': "BMXJ",
