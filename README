@@ -51,7 +51,7 @@ Python dependencies:
 ====================
           pip install pillow
           pip install requests
-          pip install git+https://github.com/nficano/pytube
+          pip install yt-dlp
 
 Dependencies:
 =============

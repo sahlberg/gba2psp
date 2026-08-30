@@ -3,6 +3,7 @@
 #
 
 import argparse
+import glob
 import io
 import os
 import requests
@@ -13,8 +14,15 @@ import tempfile
 import zipfile
 
 from PIL import Image
-from pytubefix import YouTube
-from pytubefix.contrib.search import Search
+
+have_ytdlp = False
+ytdlp = None
+try:
+    import yt_dlp as ytdlp
+    have_ytdlp = True
+except:
+    print('The yt_dlp python module was not found. Will fall back to the')
+    print('yt-dlp command line tool when downloading audio from youtube.')
 
 from gamedb import games
 from riff import copy_riff, create_riff, parse_riff
@@ -240,13 +248,58 @@ def convert_snd0_to_at3(snd0, at3, duration, max_size, subdir = './'):
         duration = int(duration * 0.95 / (os.stat(at3).st_size / max_size))
 
 
+def download_youtube_audio(link, subdir):
+    """Download the audio track for a youtube link using yt-dlp.
+
+    We prefer the yt_dlp python module but fall back to the yt-dlp command
+    line tool if the module is not installed.
+    Returns the name of the downloaded file, or None.
+    """
+    tmpl = os.path.join(subdir, 'snd0-youtube')
+    # clean out anything left behind by an earlier run
+    for f in glob.glob(tmpl + '.*'):
+        try:
+            os.unlink(f)
+        except:
+            True
+
+    if have_ytdlp:
+        opts = {
+            'format': 'bestaudio/best',
+            'outtmpl': tmpl + '.%(ext)s',
+            'noplaylist': True,
+        }
+        try:
+            with ytdlp.YoutubeDL(opts) as ydl:
+                ydl.extract_info(link, download=True)
+        except Exception as e:
+            print('Failed to download', link, e)
+    else:
+        cli = shutil.which('yt-dlp') or shutil.which('yt-dlp.exe')
+        if not cli:
+            print('Neither the yt_dlp python module nor the yt-dlp command line')
+            print('tool is available. Install it by running: pip install yt-dlp')
+            return None
+        try:
+            subprocess.run([cli, '--no-playlist', '-f', 'bestaudio/best',
+                            '-o', tmpl + '.%(ext)s', link], check=True)
+        except Exception as e:
+            print('Failed to download', link, e)
+
+    # ignore any .part/.ytdl fragments from an aborted download
+    fn = [f for f in glob.glob(tmpl + '.*')
+          if os.path.splitext(f)[1] not in ['.part', '.ytdl', '.temp']]
+    if not fn:
+        print('Failed to download', link)
+        return None
+    return fn[0]
+
+
 def get_snd0(snd0, td):
     try:
         if snd0[:24] == 'https://www.youtube.com/':
-            try:
-                fn = YouTube(snd0).streams.filter(only_audio=True)[0].download(td)
-            except:
-                print('Failed to download', snd0)
+            fn = download_youtube_audio(snd0, td)
+            if not fn:
                 return None
             snd0 = fn
 

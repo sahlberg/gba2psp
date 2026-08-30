@@ -16,13 +16,6 @@ import tkinter.ttk as ttk
 import tempfile
 import zipfile
 
-have_pytube = False
-try:
-    import pytubefix as pytube
-    have_pytube = True
-except:
-    True
-
 from PIL import Image
 from gamedb import games
 
