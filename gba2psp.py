@@ -10,6 +10,7 @@ import requests
 import shutil
 import struct
 import subprocess
+import sys
 import tempfile
 import zipfile
 
@@ -53,10 +54,7 @@ def ParseSFO(sfo_buf):
         # read key name
         _pos = sfo['key_table_start'] + idx['key_offset']
         buf = sfo_buf[_pos:_pos + 64] # no keys longer than this
-        for o in range(len(buf)):
-            if buf[o] == 0:
-                break
-        name = buf[:o].decode('utf-8')
+        name = buf.split(b'\x00')[0].decode('utf-8')
         # read data and create a dict
         data = {}
         data['data_fmt'] = idx['data_fmt']
@@ -67,7 +65,10 @@ def ParseSFO(sfo_buf):
             data['data'] = struct.unpack_from('<I', buf, 0)[0]
         if idx['data_fmt'] == 516:
             data['data_max_len'] = idx['data_max_len']
-            data['data'] = buf[:-1].decode('utf-8')
+            # data_len is not written consistently by all tools. Some count
+            # the NUL terminator and some do not, so read up to the first NUL
+            # instead of blindly dropping the last byte.
+            data['data'] = buf.split(b'\x00')[0].decode('utf-8')
         if idx['data_fmt'] == 4:
             data['data_max_len'] = idx['data_max_len']
             data['data'] = buf
@@ -98,11 +99,17 @@ def GenerateSFO(sfo):
             e['data_len'] = 4
             e['data_max_len'] = 4
         if e['data_fmt'] == 516 or e['data_fmt'] == 4:
-            e['data_len'] = len(e['data']) + 1
-            b = bytes(e['data'], encoding='utf-8')
-            if len(b) < e['data_max_len']:
-                b = b + bytes(e['data_max_len'] - len(b))
-                data = data + b
+            b = e['data']
+            if not isinstance(b, (bytes, bytearray)):
+                b = bytes(b, encoding='utf-8')
+            # Leave room for the NUL terminator. A value that exactly filled
+            # the field used to be left out of the data table completely,
+            # while the index still counted it, which produced a corrupt SFO.
+            if len(b) > e['data_max_len'] - 1:
+                print('Truncating', key, 'to fit in', e['data_max_len'], 'bytes')
+                b = b[:e['data_max_len'] - 1]
+            e['data_len'] = len(b) + 1
+            data = data + b + bytes(e['data_max_len'] - len(b))
      #
     # generate index table
     #
@@ -198,10 +205,7 @@ def get_icon0(f):
             if ret.status_code != 200:
                 print('Failed to download', f)
                 return None
-            if ret.apparent_encoding:
-                icon0 = Image.open(io.BytesIO(ret.content.decode(ret.apparent_encoding)))
-            else:
-                icon0 = Image.open(io.BytesIO(ret.content))
+            icon0 = Image.open(io.BytesIO(ret.content))
         else:
             icon0 = Image.open(f)
 
@@ -236,7 +240,7 @@ def convert_snd0_to_at3(snd0, at3, duration, max_size, subdir = './'):
             if os.name == 'posix':
                 subprocess.run(['atracdenc/src/atracdenc', '--encode=atrac3', '-i', tmp_wav, '-o', tmp_snd0], check=True)
             else:
-                subprocess.run(['atrackdenc/src/atracdenc.exe', '--encode=atrac3', '-i', tmp_wav, '-o', tmp_snd0], check=True)
+                subprocess.run(['atracdenc/src/atracdenc.exe', '--encode=atrac3', '-i', tmp_wav, '-o', tmp_snd0], check=True)
         except:
             print('XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX\natracdenc not found.\nCan not create SND0.AT3\nPlease see README file for how to install atracdenc\nXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX')
             return None
@@ -244,8 +248,15 @@ def convert_snd0_to_at3(snd0, at3, duration, max_size, subdir = './'):
         create_riff(tmp_snd0, at3, number_of_samples=int(len(s['data']['data'])/4), max_data_size=0, loop=True)
         if os.stat(at3).st_size < max_size:
             break
-        # Too big. Clamp duration and try again
-        duration = int(duration * 0.95 / (os.stat(at3).st_size / max_size))
+        # Too big. Clamp duration and try again. Always make progress, or we
+        # would loop forever on a file we can not get under max_size.
+        _d = int(duration * 0.95 / (os.stat(at3).st_size / max_size))
+        if _d >= duration:
+            _d = duration - 1
+        if _d < 1:
+            print('Can not shrink SND0 to below', max_size, 'bytes')
+            return None
+        duration = _d
 
 
 def download_youtube_audio(link, subdir):
@@ -311,7 +322,8 @@ def get_snd0(snd0, td):
         convert_snd0_to_at3(td + '/snd0_tmp.wav', td + '/SND0.AT3', 59, 500000, subdir=td)
         with open(td + '/SND0.AT3', 'rb') as i:
             return i.read()
-    except:
+    except Exception as e:
+        print('Failed to create SND0:', e)
         return None
 
     
@@ -323,10 +335,7 @@ def get_pic0(f):
             if ret.status_code != 200:
                 print('Failed to download', f)
                 return None
-            if ret.apparent_encoding:
-                pic0 = Image.open(io.BytesIO(ret.content.decode(ret.apparent_encoding)))
-            else:
-                pic0 = Image.open(io.BytesIO(ret.content))
+            pic0 = Image.open(io.BytesIO(ret.content))
         else:
             pic0 = Image.open(f)
 
@@ -353,10 +362,7 @@ def get_pic1(f):
             if ret.status_code != 200:
                 print('Failed to download', f)
                 return None
-            if ret.apparent_encoding:
-                pic1 = Image.open(io.BytesIO(ret.content.decode(ret.apparent_encoding)))
-            else:
-                pic1 = Image.open(io.BytesIO(ret.content))
+            pic1 = Image.open(io.BytesIO(ret.content))
         else:
             pic1 = Image.open(f)
 
@@ -376,13 +382,21 @@ def read_game(game):
                 if f[-4:].lower() == '.gba':
                     with z.open(f) as zf:
                         return zf.read()
-            
+            raise Exception('No .gba file found inside ' + game)
+
         with open(game, 'rb') as f:
             return f.read()
 
 def create_eboot(game, game_id, icon0, pic0, pic1, snd0, outdir):
     if not outdir:
         outdir = '.'
+
+    if not os.path.isdir('TempGBA-Single-Game'):
+        print('XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX')
+        print('Could not find the TempGBA-Single-Game directory.')
+        print('Please see the README file for how to install it.')
+        print('XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX')
+        return False
 
     print('Installing to', outdir + '/' + game_id)
     shutil.copytree('TempGBA-Single-Game', outdir + '/' + game_id,
@@ -415,6 +429,8 @@ def create_eboot(game, game_id, icon0, pic0, pic1, snd0, outdir):
         print('Writing', outdir + '/' + game_id + '/roms/game.gba')
         o.write(game)
 
+    return True
+
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
@@ -424,13 +440,13 @@ if __name__ == "__main__":
     parser.add_argument('--icon0', help='Image for ICON0')
     parser.add_argument('--pic0', help='Image for PIC0')
     parser.add_argument('--pic1', help='Image for PIC1')
-    parser.add_argument('--snd0', help='Image for SND0')
+    parser.add_argument('--snd0', help='Audio file, or a youtube link, for SND0')
     parser.add_argument('game', help='GBA image')
     args = parser.parse_args()
 
     if not args.psp_game_dir:
         print('Must specify --psp-game-dir')
-        os._exit(1)
+        sys.exit(1)
 
     td = tempfile.TemporaryDirectory(prefix='gba2psp-')
 
@@ -440,9 +456,13 @@ if __name__ == "__main__":
     for i in range(16):
         if game_id[i] == 0x00:
             game_id[i] = 0x20
-    game_id = game_id.decode()
+    game_id = game_id.decode('utf-8', errors='replace')
         
     print('GameID: [%s]' % game_id)
+    if game_id not in games:
+        print('This GameID is not in the game database in gamedb.py.')
+        print('Please consider contributing an entry for it.')
+        sys.exit(1)
     print('Title:', games[game_id]['title'])
 
     icon0 = None
@@ -470,4 +490,5 @@ if __name__ == "__main__":
         snd0 = get_snd0(games[game_id]['snd0'], td.name)
         
         
-    create_eboot(game, game_id, icon0, pic0, pic1, snd0, args.psp_game_dir)
+    if not create_eboot(game, game_id, icon0, pic0, pic1, snd0, args.psp_game_dir):
+        sys.exit(1)
